@@ -1,0 +1,16 @@
+<HEAD>
+<TITLE>
+    SystemShop
+</TITLE>
+    </HEAD>
+{{extend 'layout.html'}}
+
+{{block header}}
+      <style type = "text/css">
+body {
+background: url('/SystemShop/static/images/web.jpg') no-repeat;
+background-size: 87%
+}
+</style>
+   
+{{end}}
