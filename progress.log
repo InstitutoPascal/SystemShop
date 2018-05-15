@@ -30,3 +30,7 @@
 [2018-05-15 19:28:51] CREATE ventas.py: 0
 [2018-05-15 19:37:34] CREATE altas.py: 0
 [2018-05-15 19:41:42] CREATE reportes.py: 0
+[2018-05-15 19:47:42] CREATE carrito.y.py: 0
+[2018-05-15 19:48:06] CREATE compras.py: 0
+[2018-05-15 19:48:40] DELETE SystemShop/controllers/carrito.y.py: -1
+[2018-05-15 19:48:55] CREATE carrito.py: 0
