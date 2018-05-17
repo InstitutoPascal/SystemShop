@@ -47,10 +47,10 @@ def _():
     # ------------------------------------------------------------------------------------------------------------------
 response.menu += [
             (T('Altas'), False, URL('default','index'), [
-                (T('Productos'), False, URL('altas', ),[]),
-                (T('Empleados'), False, URL('altas', ),[]),
-                (T('Proveedores'), False, URL('alta_proveedor', ),[]),
-                (T('Clientes'), False,URL('altas', ),[])])]
+                (T('Productos'), False, URL('altas', 'alta_productos'),[]),
+                (T('Empleados'), False, URL('altas', 'alta_empleados'),[]),
+                (T('Proveedores'), False, URL('altas', 'alta_proveedores'),[]),
+                (T('Clientes'), False,URL('altas', 'alta_clientes'),[])])]
 
 response.menu += [
             (T('Reportes'), False, URL('default','index'), [
