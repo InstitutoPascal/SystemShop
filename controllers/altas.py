@@ -1,1 +1,4 @@
-def index(): return dict(message="hello from altas.py")
+#alta_proveedor
+def alta_proveedor():
+
+    return dict()
