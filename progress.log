@@ -1,0 +1,14 @@
+[2018-05-16 21:07:03] START
+[2018-05-16 21:07:03] EDIT SystemShop/controllers/altas.py: 8
+[2018-05-16 21:12:40] CREATE altas/alta_proveedor.html: 0
+[2018-05-16 21:15:08] EDIT SystemShop/controllers/altas.py: -7
+[2018-05-16 21:17:30] EDIT SystemShop/models/menu.py: 0
+[2018-05-16 21:23:26] EDIT SystemShop/models/menu.py: 0
+[2018-05-16 21:30:36] EDIT SystemShop/models/menu.py: 0
+[2018-05-16 21:35:08] EDIT SystemShop/models/menu.py: 0
+[2018-05-16 21:38:34] EDIT SystemShop/models/menu.py: 0
+[2018-05-16 21:41:04] EDIT SystemShop/controllers/altas.py: 6
+[2018-05-16 21:43:18] CREATE altas/alta_productos.html: 0
+[2018-05-16 21:43:52] CREATE altas/alta_empleados.html: 0
+[2018-05-16 21:44:28] CREATE altas/alta_clientes.html: 0
+[2018-05-16 21:46:02] EDIT SystemShop/models/menu.py: 0
