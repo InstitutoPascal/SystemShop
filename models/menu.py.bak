@@ -50,7 +50,7 @@ response.menu += [
                 (T('Productos'), False, URL('altas', 'alta_productos'),[]),
                 (T('Empleados'), False, URL('altas', 'alta_empleados'),[]),
                 (T('Proveedores'), False, URL('altas', 'alta_proveedores'),[]),
-                (T('Clientes'), False,URL('altas', 'alta_cliente'),[])])]
+                (T('Clientes'), False,URL('altas', 'alta_clientes'),[])])]
 
 response.menu += [
             (T('Reportes'), False, URL('default','index'), [

@@ -54,11 +54,11 @@ response.menu += [
 
 response.menu += [
             (T('Reportes'), False, URL('default','index'), [
-                (T('Productos'), False, URL('reportes', ),[]),
-                (T('Empleados'), False, URL('reportes', ),[]),
-                (T('Ventas Online'), False, URL('reportes', ),[]),
-                (T('Ventas Local'), False, URL('reportes', ),[]),
-                (T('Proveedores'), False, URL('reportes', ),[]),
+                (T('Productos'), False, URL('reportes','reportes_productos' ),[]),
+                (T('Empleados'), False, URL('reportes','reportes_empleados' ),[]),
+                (T('Ventas Online'), False, URL('reportes','reportes_venta_online' ),[]),
+                (T('Ventas Local'), False, URL('reportes','reportes_venta_local' ),[]),
+                (T('Proveedores'), False, URL('reportes','reportes_proveedores' ),[]),
 
                 ])]
 
