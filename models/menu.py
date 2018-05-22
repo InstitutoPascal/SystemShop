@@ -56,6 +56,17 @@ response.menu += [
                 (T('Proveedores'), False, URL('altas', 'alta_proveedores'),[]),
                 (T('Clientes'), False,URL('altas', 'alta_clientes'),[])])]
 
+response.menu += [
+            (T('Reportes'), False, URL('default','index'), [
+                (T('Productos'), False, URL('reportes','reportes_productos' ),[]),
+                (T('Empleados'), False, URL('reportes','reportes_empleados' ),[]),
+                (T('Ventas Online'), False, URL('reportes','reportes_venta_online' ),[]),
+                (T('Ventas Local'), False, URL('reportes','reportes_venta_local' ),[]),
+                (T('Proveedores'), False, URL('reportes','reportes_proveedores' ),[]),
+
+                ])]
+
+
 if DEVELOPMENT_MENU:
     _()
 
