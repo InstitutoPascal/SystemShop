@@ -66,6 +66,9 @@ response.menu += [
 
                 ])]
 
+response.menu += [
+            (T('Compras'), False, URL('default','index'), [
+                (T('Proveedores'), False, URL('compras', 'ComprasProveedores'),[])])]
 
 if DEVELOPMENT_MENU:
     _()

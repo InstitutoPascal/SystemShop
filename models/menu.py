@@ -70,6 +70,12 @@ response.menu += [
             (T('Compras'), False, URL('default','index'), [
                 (T('Proveedores'), False, URL('compras', 'ComprasProveedores'),[])])]
 
+response.menu += [
+            (T('Ventas'), False, URL('default','index'), [
+                (T('Ventas Local'), False, URL('ventaslocal', 'VentasLocal'),[]),
+                (T('Ventas Online'), False, URL('productos', 'index'),[]),
+        ])]
+
 if DEVELOPMENT_MENU:
     _()
 
