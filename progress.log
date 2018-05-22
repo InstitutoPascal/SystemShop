@@ -20,3 +20,5 @@
 [2018-05-21 20:18:48] CREATE reportes/reportes_empleados.html: 0
 [2018-05-21 20:21:32] EDIT SystemShop/models/menu.py: 0
 [2018-05-21 20:23:52] CREATE reportes/reportes_productos.html: 0
+[2018-05-22 18:34:13] EDIT SystemShop/models/menu.py: -22
+[2018-05-22 18:34:32] EDIT SystemShop/models/menu.py: 6

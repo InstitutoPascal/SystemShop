@@ -45,6 +45,10 @@ def _():
     # ------------------------------------------------------------------------------------------------------------------
     # useful links to internal and external resources
     # ------------------------------------------------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------------------------------------------------------------02-05-17
+
+#---------------------------------------------------------------------------------------------------------------------------------------
 response.menu += [
             (T('Altas'), False, URL('default','index'), [
                 (T('Productos'), False, URL('altas', 'alta_productos'),[]),
@@ -52,28 +56,6 @@ response.menu += [
                 (T('Proveedores'), False, URL('altas', 'alta_proveedores'),[]),
                 (T('Clientes'), False,URL('altas', 'alta_clientes'),[])])]
 
-response.menu += [
-            (T('Reportes'), False, URL('default','index'), [
-                (T('Productos'), False, URL('reportes','reportes_productos' ),[]),
-                (T('Empleados'), False, URL('reportes','reportes_empleados' ),[]),
-                (T('Ventas Online'), False, URL('reportes','reportes_venta_online' ),[]),
-                (T('Ventas Local'), False, URL('reportes','reportes_venta_local' ),[]),
-                (T('Proveedores'), False, URL('reportes','reportes_proveedores' ),[]),
-
-                ])]
-
-response.menu += [
-            (T('Compras'), False, URL('default','index'), [
-                (T('Proveedores'), False, URL('compras', 'ComprasProveedores'),[])])]
-#------------------------------------------------------------------------------------------------------------------------------------02-05-17
-
-#---------------------------------------------------------------------------------------------------------------------------------------
-
-response.menu += [
-            (T('Ventas'), False, URL('default','index'), [
-                (T('Ventas Local'), False, URL('ventaslocal', 'VentasLocal'),[]),
-                (T('Ventas Online'), False, URL('productos', 'index'),[]),
-        ])]
 if DEVELOPMENT_MENU:
     _()
 
