@@ -1,3 +1,8 @@
-# -*- coding: utf-8 -*-
-# intente algo como
-def index(): return dict(message="hello from ventas.py")
+def ventas_online():
+
+    return dict()
+
+#alta_producto
+def ventas_local():
+
+    return dict()

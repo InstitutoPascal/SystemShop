@@ -73,7 +73,7 @@ response.menu += [
 response.menu += [
             (T('Ventas'), False, URL('default','index'), [
                 (T('Ventas Local'), False, URL('ventaslocal', 'VentasLocal'),[]),
-                (T('Ventas Online'), False, URL('productos', 'index'),[]),
+                (T('Ventas Online'), False, URL('ventas', 'ventas_online'),[]),
         ])]
 
 if DEVELOPMENT_MENU:
