@@ -58,3 +58,8 @@
 [2018-05-23 21:54:55] EDIT SystemShop/models/menu.py: 0
 [2018-05-23 22:12:59] EDIT SystemShop/views/ventas/ventas_online.html: 7
 [2018-05-26 10:19:39] EDIT SystemShop/controllers/compras.py: 11
+[2018-05-26 10:30:20] CREATE compras/compras_proveedores.html: 0
+[2018-05-26 10:31:13] CREATE compras/confirmar_compra.html: 0
+[2018-05-26 10:32:08] CREATE compras/guardar_producto.html: 0
+[2018-05-26 10:33:29] CREATE compras/listados_proveedores.html: 0
+[2018-05-26 10:34:46] CREATE compras/cancelar_venta.html: 0
