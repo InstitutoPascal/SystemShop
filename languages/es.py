@@ -453,6 +453,7 @@
 'value not allowed': 'valor no permitido',
 'value not in database': 'el valor no está en la base de datos',
 'Ventas': 'Ventas',
+'ventas': 'ventas',
 'Ventas Local': 'Ventas Local',
 'Ventas Online': 'Ventas Online',
 'Verify Password': 'Verificar Contraseña',

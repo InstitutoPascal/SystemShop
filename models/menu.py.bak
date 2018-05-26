@@ -50,14 +50,14 @@ def _():
 
 #---------------------------------------------------------------------------------------------------------------------------------------
 response.menu += [
-            (T('Altas'), False, URL('default','index'), [
+            (T('Altas'), False, URL('altas','index'), [
                 (T('Productos'), False, URL('altas', 'alta_productos'),[]),
                 (T('Empleados'), False, URL('altas', 'alta_empleados'),[]),
                 (T('Proveedores'), False, URL('altas', 'alta_proveedores'),[]),
                 (T('Clientes'), False,URL('altas', 'alta_clientes'),[])])]
 
 response.menu += [
-            (T('Reportes'), False, URL('default','index'), [
+            (T('Reportes'), False, URL('reportes','index'), [
                 (T('Productos'), False, URL('reportes','reportes_productos' ),[]),
                 (T('Empleados'), False, URL('reportes','reportes_empleados' ),[]),
                 (T('Ventas Online'), False, URL('reportes','reportes_venta_online' ),[]),
@@ -67,13 +67,13 @@ response.menu += [
                 ])]
 
 response.menu += [
-            (T('Compras'), False, URL('default','index'), [
-                (T('Proveedores'), False, URL('compras', 'ComprasProveedores'),[])])]
+            (T('Compras'), False, URL('compras','index'), [
+                (T('Proveedores'), False, URL('compras', 'compras_proveedores'),[])])]
 
 response.menu += [
-            (T('Ventas'), False, URL('default','index'), [
-                (T('Ventas Local'), False, URL('ventaslocal', 'VentasLocal'),[]),
-                (T('Ventas Online'), False, URL('ventas', 'ventas_onnnline'),[]),
+            (T('ventas'), False, URL('ventas','index'), [
+                (T('Ventas Local'), False, URL('ventas', 'venta_local'),[]),
+                (T('Ventas Online'), False, URL('ventas', 'venta_online'),[]),
         ])]
 
 if DEVELOPMENT_MENU:

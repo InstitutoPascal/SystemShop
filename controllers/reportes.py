@@ -9,5 +9,8 @@ def reportes_empleados():
 def reportes_venta_online():
     return dict()
 
-def reportes_ventas_local():
+def reportes_venta_local():
+    return dict()
+
+def reportes_proveedores():
     return dict()
