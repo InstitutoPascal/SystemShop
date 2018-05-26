@@ -8,8 +8,8 @@
 {{block header}}
       <style type = "text/css">
 body {
-background: url('/SystemShop/static/images/web.jpg') no-repeat;
-background-size: 87%
+background: url('/SystemShop/static/images/carrito.jpg') no-repeat;
+background-size: 99%
 }
 </style>
    
