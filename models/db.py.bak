@@ -130,3 +130,57 @@ auth.settings.reset_password_requires_verification = True
 # after defining tables, uncomment below to enable auditing
 # -------------------------------------------------------------------------
 # auth.enable_record_versioning(db)
+
+
+#############################COMIENZO DE LA TABLA "PRODUCTOS"###################################
+
+db.define_table("productos",
+   Field('nombre', 'string',),
+   Field('descripcion','string',),
+   Field ('precio','integer',),
+   Field('id_provedor', 'integer',),
+   Field('id_categoria', 'string',),
+               )
+#############################FIN DE LA TABLA "PRODUCTOS"#################################
+
+
+#############################COMIENZO DE LA TABLA "VENTAS"###################################
+
+db.define_table("ventas",
+   Field('cantidad', 'string',),
+   Field('id_venta', 'integer',),
+   Field('id_producto', 'string',),
+               )
+#############################FIN DE LA TABLA "VENTAS"#################################
+
+
+#############################COMIENZO DE LA TABLA "PROVEEDOR"###################################
+
+db.define_table("proveedor",
+   Field('nombre', 'string',),
+   Field('telefono', 'integer',),
+   Field('id_proveedor', 'string',),
+   Field('direccion', 'string',),
+               )
+#############################FIN DE LA TABLA "PROVEEDOR"#################################
+
+
+#############################COMIENZO DE LA TABLA "CATEGORIA"###################################
+
+db.define_table("categorias",
+   Field('nombre', 'string',),
+   Field('id_categoria', 'string',),
+   Field('descripcion', 'string',),
+               )
+#############################FIN DE LA TABLA "PROVEEDOR"#################################
+
+
+#############################COMIENZO DE LA TABLA "cliente"###################################
+
+db.define_table("cliente",
+   Field('nombre', 'string',),
+   Field ('dni','integer',label=T ('DNI')),
+   Field('telefono', 'string',),
+   Field('direccion', 'string',),
+               )
+#############################FIN DE LA TABLA "cliente"#################################
