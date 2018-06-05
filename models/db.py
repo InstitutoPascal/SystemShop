@@ -183,4 +183,4 @@ db.define_table("cliente",
    Field('telefono', 'string',),
    Field('direccion', 'string',),
                )
-#############################FIN DE LA TABLA "cliente"#################################
+#############################FIN DE LA TABLA "CLIENTE"###################################################
