@@ -141,6 +141,7 @@
 'Disk Cache Keys': 'Llaves de Caché en Disco',
 'Disk Cleared': 'Disco limpiado',
 'DISK contains items up to **%(hours)02d** %%{hour(hours)} **%(min)02d** %%{minute(min)} **%(sec)02d** %%{second(sec)} old.': 'El DISCO contiene items con **%(hours)02d** %%{hora(hours)} **%(min)02d** %%{minuto(min)} **%(sec)02d** %%{segundo(sec)} de antiguedad.',
+'DNI': 'DNI',
 'Documentation': 'Documentación',
 "Don't know what to do?": '¿No sabe que hacer?',
 'done!': '¡hecho!',
