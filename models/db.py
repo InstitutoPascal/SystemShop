@@ -131,6 +131,7 @@ auth.settings.reset_password_requires_verification = True
 # -------------------------------------------------------------------------
 # auth.enable_record_versioning(db)
 
+
 #############################COMIENZO DE LA TABLA "PRODUCTOS"###################################
 
 db.define_table("productos",
@@ -174,12 +175,12 @@ db.define_table("categorias",
 #############################FIN DE LA TABLA "PROVEEDOR"#################################
 
 
-#############################COMIENZO DE LA TABLA "USUARIOS"###################################
+#############################COMIENZO DE LA TABLA "cliente"###################################
 
-db.define_table("usuarios",
+db.define_table("cliente",
    Field('nombre', 'string',),
    Field ('dni','integer',label=T ('DNI')),
    Field('telefono', 'string',),
    Field('direccion', 'string',),
                )
-#############################FIN DE LA TABLA "USUARIOS"#################################
+#############################FIN DE LA TABLA "cliente"#################################
