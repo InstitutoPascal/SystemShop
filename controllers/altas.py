@@ -23,4 +23,3 @@ def alta_clientes():
     else:
         response.flash = 'Complete el formulario'
     return dict(f=form)
-    return dict()

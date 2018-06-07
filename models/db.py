@@ -131,10 +131,9 @@ auth.settings.reset_password_requires_verification = True
 # -------------------------------------------------------------------------
 # auth.enable_record_versioning(db)
 
-
 #############################COMIENZO DE LA TABLA "PRODUCTOS"###################################
 
-db.define_table("productos",
+db.define_table('productos',
    Field('nombre', 'string',),
    Field('descripcion','string',),
    Field ('precio','integer',),
@@ -146,7 +145,7 @@ db.define_table("productos",
 
 #############################COMIENZO DE LA TABLA "VENTAS"###################################
 
-db.define_table("ventas",
+db.define_table('ventas',
    Field('cantidad', 'string',),
    Field('id_venta', 'integer',),
    Field('id_producto', 'string',),
@@ -156,7 +155,7 @@ db.define_table("ventas",
 
 #############################COMIENZO DE LA TABLA "PROVEEDOR"###################################
 
-db.define_table("proveedor",
+db.define_table('proveedor',
    Field('nombre', 'string',),
    Field('telefono', 'integer',),
    Field('id_proveedor', 'string',),
@@ -167,7 +166,7 @@ db.define_table("proveedor",
 
 #############################COMIENZO DE LA TABLA "CATEGORIA"###################################
 
-db.define_table("categorias",
+db.define_table('categorias',
    Field('nombre', 'string',),
    Field('id_categoria', 'string',),
    Field('descripcion', 'string',),
@@ -177,7 +176,7 @@ db.define_table("categorias",
 
 #############################COMIENZO DE LA TABLA "cliente"###################################
 
-db.define_table("cliente",
+db.define_table('cliente',
    Field('nombre', 'string',),
    Field ('dni','integer',label=T ('DNI')),
    Field('telefono', 'string',),
