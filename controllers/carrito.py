@@ -1,3 +1,6 @@
-# -*- coding: utf-8 -*-
-# intente algo como
-def index(): return dict(message="hello from carrito.py")
+from ConfigParser import SafeConfigParser
+import time
+
+def index():
+    regs = db(db.productos.id_producto>0).select()
+    return dict(productos=regs)
