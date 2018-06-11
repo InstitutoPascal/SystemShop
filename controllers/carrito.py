@@ -1,6 +1,11 @@
 from ConfigParser import SafeConfigParser
 import time
+#prducto.html
+def producto():
+   
+    return dict()
 
-def index():
-    regs = db(db.productos.id_producto>0).select()
-    return dict(productos=regs)
+#ver_producto.html
+def ver_producto():
+   
+    return dict()

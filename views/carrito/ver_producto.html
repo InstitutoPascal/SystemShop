@@ -1,0 +1,28 @@
+{{extend 'layout.html'}}
+Alfajor Milka
+
+<hr class="featurette-divider">
+<form class="form-horizontal" action="{{=URL(c='ventas',f='ventas_online')}}" enctype="multipart/form-data" method="POST">
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading"></h2>
+            <h2><span class="text-muted"></span></h2>
+              <p class="lead"> <img class="pequeña"  src="http://127.0.0.1:8000/SystemShop/static/_2.14.6/images/milka.jpg" width='190' height='190'></p>
+            <h1><strong>
+                $
+            </strong></h1>
+            <br>
+            </h1>
+                <p>
+
+                  <input type="hidden" name="producto" value="" />
+                  <input type="submit" role="button" class="btn btn-danger btn-lg" name="comprar" value="Comprar" />
+                  <input type="number" name="cantidad" value="1" />
+                  <a type="button" class="btn btn-primary btn-lg" href="{{=URL(c='ventas',f='venta_online')}}">Volver</a>
+                </p>
+        </div>
+
+        </div>
+      </div>
+</form>
+</hr>
