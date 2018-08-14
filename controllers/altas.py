@@ -5,8 +5,14 @@ def alta_proveedor():
 
 #alta_producto
 def alta_productos():
-
-    return dict()
+    form = SQLFORM(db.productos)
+    if form.accepts(request.vars, session):
+        response.flash = 'Formulario aceptado'
+    elif form.errors:
+        response.flash = 'El formulario tiene errores'
+    else:
+        response.flash = 'Complete el formulario'
+    return dict(f=form)
 
 #alta_empleado
 def alta_empleados():
