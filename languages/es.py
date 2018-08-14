@@ -163,6 +163,7 @@
 'Email sent': 'Correo electrónico enviado',
 'Empleados': 'Empleados',
 'End of impersonation': 'Fin de suplantación',
+'Enter a number between %(min)g and %(max)g': 'Enter a number between %(min)g and %(max)g',
 'enter a number between %(min)g and %(max)g': 'introduzca un numero entre %(min)g y %(max)g',
 'enter a value': 'introduzca un valor',
 'Enter an integer between %(min)g and %(max)g': 'Enter an integer between %(min)g and %(max)g',

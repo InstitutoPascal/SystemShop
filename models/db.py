@@ -132,14 +132,25 @@ auth.settings.reset_password_requires_verification = True
 # auth.enable_record_versioning(db)
 
 #############################COMIENZO DE LA TABLA "PRODUCTOS"###################################
-
 db.define_table('productos',
-   Field('nombre', 'string',),
-   Field('descripcion','string',),
-   Field ('precio','integer',),
-   Field('id_provedor', 'integer',),
-   Field('id_categoria', 'string',),
-               )
+   Field('id_producto', 'string',),
+   Field('codigo_barras', 'string'),
+   Field('cantidad_prod','integer'),
+   Field ('nombre','string'),
+   Field ('marca','string'),
+   Field('descripcion','string'),
+   Field('envase','string'),
+   Field ('categoria','string'),
+   Field('precio','float'),
+   Field('proveedor','string'),
+   Field ('codigo_producto','string'),
+   Field ('fecha_ingreso','string'),
+   Field('numero_remito','integer'),
+   Field('numero_lote','integer'),
+   Field('imagen','upload'),
+   Field('observaciones','text'),
+                 )
+
 #############################FIN DE LA TABLA "PRODUCTOS"#################################
 
 
