@@ -188,9 +188,17 @@ db.define_table('categorias',
 #############################COMIENZO DE LA TABLA "cliente"###################################
 
 db.define_table('cliente',
+   Field("id_clientes","id"), 
+   Field ('codigo_cliente','integer'),
    Field('nombre', 'string',),
    Field ('dni','integer',label=T ('DNI')),
    Field('telefono', 'string',),
    Field('direccion', 'string',),
-               )
+   Field ('email','string'),  
+   Field ('dni','integer',unique=True),
+   Field('cuil','string'),
+   Field('sexo', requires=IS_IN_SET(['Masculino', 'Femenino', 'Otro'])),
+   Field('telefono','integer'),
+   Field('direccion','string'),
+   Field('localidad_cliente','string'),            )
 #############################FIN DE LA TABLA "CLIENTE"###################################################
