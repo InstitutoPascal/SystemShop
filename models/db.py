@@ -191,21 +191,28 @@ db.define_table('proveedor',
 
 
 #############################COMIENZO DE LA TABLA "cliente"###################################
-
-db.define_table('cliente',
-   Field("id_clientes","id"), 
+##Clientes##
+db.define_table ('clientes',
+   Field('id_clientes','id'), 
    Field ('codigo_cliente','integer'),
-   Field('nombre', 'string',),
-   Field ('dni','integer',label=T ('DNI')),
-   Field('telefono', 'string',),
-   Field('direccion', 'string',),
+   Field ('nombre','string'),
+   Field ('apellido','string'),
    Field ('email','string'),  
    Field ('dni','integer',unique=True),
    Field('cuil','string'),
    Field('sexo', requires=IS_IN_SET(['Masculino', 'Femenino', 'Otro'])),
    Field('telefono','integer'),
    Field('direccion','string'),
-   Field('localidad_cliente','string'),            )
+   Field('localidad_cliente','string'),
+   Field('tipo_categoria', requires=IS_IN_SET(['Resp. Inscr.','Monotributo'])),  #agregada by enrique
+   Field ('provincia','string'),
+   Field ('pais','string'),
+   Field ('codigo_postal','integer'),
+   Field('estado', requires=IS_IN_SET(['activo','inactivo'])),
+   Field ('observaciones','text')
+                )
+
+
 #############################FIN DE LA TABLA "CLIENTE"###################################################
 ##Categoria##
 
