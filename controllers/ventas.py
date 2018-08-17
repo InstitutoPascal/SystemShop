@@ -1,8 +1,8 @@
-def venta_online():
-
+def ventas_online():
     return dict()
 
+
 #
-def venta_local():
+def ventas_local():
 
     return dict()
