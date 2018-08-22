@@ -1,28 +1,25 @@
 {{extend 'layout.html'}}
 
+<p>
 
-
-<hr class="featurette-divider">
-<form class="form-horizontal" action="{{=URL(c='carrito',f='producto')}}" enctype="multipart/form-data" method="POST">
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">{{=productos.marca}}</h2>
-            <h2>{{=productos.nombre}}.<span class="text-muted">{{=productos.envase}}</span></h2>
-              <p class="lead">{{=productos.descripcion}}</p>
-            <h1><strong>$ {{=productos.precio}}</strong></h1>
-            <br>
-            </h1>
-                <p>
-                 <!-- <a type="cargar" class="btn btn-danger btn-lg" href="{{=URL(c="productos",f="carrito")}}">Comprar</a>-->
                   <input type="hidden" name="producto" value="{{=productos.id_producto}}" />
                   <input type="submit" role="button" class="btn btn-danger btn-lg" name="comprar" value="Comprar" />
                   <input type="number" name="cantidad" value="1" />
                   <a type="button" class="btn btn-primary btn-lg" href="{{=URL(c='carrito',f='ver_producto')}}">Volver</a>
                 </p>
         </div>
-        <div class="col-md-5">
-          {{=IMG(src=URL(c="carrito", f="mostrar", args=[productos.id_producto]))}}
-        </div>
+<hr class="featurette-divider">
+<form class="form-horizontal" action="{{=URL(c='carrito',f='producto')}}" enctype="multipart/form-data" method="POST">
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">{{=productos.marca}}</h2>
+            <h2>{{=productos.nombre}}</h2>
+
+            <h1><strong>$ {{=productos.precio}}</strong></h1>
+            <br>
+            </h1>
+        <div class="col-md-2">
+          {{=IMG(_src=URL(c="carrito", f="mostrar", args=[productos.id_producto]))}}
+</div>
       </div>
 </form>
-</hr>
