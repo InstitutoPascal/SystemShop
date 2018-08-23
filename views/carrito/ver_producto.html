@@ -2,20 +2,16 @@
 
 <form class="form-horizontal" action="{{=URL(c='productos',f='carrito')}}" enctype="multipart/form-data" method="POST">
 <div class="row">
-    {{for productos in productos:}}
-
+{{for productos in productos:}}
    <div class="col-sm-4 col-md-3 hero-feature">
      <div class="thumbnail">
        <div class="product-image">
-          {{=IMG(_src=URL(c="carrito", f="mostrar", args=[productos.id_producto]))}}
+          {{=IMG(_class="img-responsive img-rounded", _style="max-height: 95px; max-width: 95px;", _src=URL(c="carrito", f="mostrar", args=[productos.id_producto]))}}
        </div>
        <div class="caption">
         <h3>{{=productos.marca}}, {{=productos.nombre}}.</h3>
-            <p>
-                $ {{=productos.precio}}
-            </p>
-        <p>
-          <a href="{{=URL(c='carrito',f='ver', args=[productos.id_producto])}}" class="btn btn-primary" role="button">Agregar a Carrito <i class="glyphicon glyphicon-shopping-cart" ></i></a>
+            <p>$ {{=productos.precio}}</p>
+        <p><a href="{{=URL(c='carrito',f='ver', args=[productos.id_producto])}}" class="btn btn-primary" role="button">Agregar a Carrito <i class="glyphicon glyphicon-shopping-cart" ></i></a>
           <input type="hidden" name="producto" value="{{=productos.id_producto}}" />
           <!--<input type="submit" role="button" class="btn btn-danger" name="comprar" value="Comprar" />-->
           <!--<input type="number" name="cantidad" value="1" />-->
@@ -23,24 +19,6 @@
       </div>
     </div>
   </div>
-    </div>
-  {{pass}}
- </form>
+{{pass}}
 </div>
-<!-- <div class="col-sm-4 col-md-2 hero-feature">
-    <div class="thumbnail">
-       <div class="product-image">
-          {{=IMG(_src=URL("static/images","IMG-20170517-WA0074.jpg"), _width="100%", _height="100%")}}
-       </div>
-        <div class="caption">
-        <h3>Ilove47, Rebel.</h3>
-            <p>
-                $ 450
-            </p>
-        <p>
-          <a href="{{=URL(c="ventas",f="VentasOnlinePerfume2")}}" class="btn btn-primary" role="button">Ver Descripción</a>
-          <a href="{{=URL(c="ventas",f="VentasOnlineCarga")}}" class="btn btn-danger" role="button">COMPRAR</a>
-        </p>
-      </div>
-    </div>
-  </div>
+</form>

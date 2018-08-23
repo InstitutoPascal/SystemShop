@@ -55,3 +55,6 @@ def ver():
    # consultamos a la bd para que traiga el registro del primer producto:
     reg = db(db.productos.id_producto==prod_id).select().first()
     return dict(productos=reg)
+
+def ver_carrito():
+    return dict()

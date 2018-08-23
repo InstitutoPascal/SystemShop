@@ -2,10 +2,10 @@
 
 <p>
 
-                  <input type="hidden" name="producto" value="{{=productos.id_producto}}" />
-                  <input type="submit" role="button" class="btn btn-danger btn-lg" name="comprar" value="Comprar" />
-                  <input type="number" name="cantidad" value="1" />
-                  <a type="button" class="btn btn-primary btn-lg" href="{{=URL(c='carrito',f='ver_producto')}}">Volver</a>
+ <input type="hidden" name="producto" value="{{=productos.id_producto}}" />
+ <a type="submit" role="button" class="btn btn-danger btn-lg" href="{{=URL(c='carrito',f='producto')}}">Comprar <a/>
+ <input type="number" name="cantidad" value="1" />
+ <a type="button" class="btn btn-primary btn-lg" href="{{=URL(c='carrito',f='ver_producto')}}">Volver</a>
                 </p>
         </div>
 <hr class="featurette-divider">
