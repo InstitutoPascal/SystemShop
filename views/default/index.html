@@ -6,11 +6,21 @@
 {{extend 'layout.html'}}
 
 {{block header}}
-      <style type = "text/css">
-body {
-background: url('/SystemShop/static/images/carrito.jpg') no-repeat;
-background-size: 100%
-}
-</style>
+            <style>          
+               body::after {
+                 content: "";
+                   background: url("{{=URL('static','/fondos/carrito.jpeg')}}");
+                 background-repeat:no-repeat;
+                 background-size: cover;
+                 background-attachment:fixed;
+
+                 opacity: 2;
+                 top: 0;
+                 left: 0;
+                 bottom: 0;
+                 right: 0;
+                 position: absolute;
+                 z-index: -1;   
+               }           
    
 {{end}}

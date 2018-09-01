@@ -364,6 +364,7 @@
 'session expired': 'sesión expirada',
 'shell': 'terminal',
 'Sign Up': 'Registrarse',
+'Sign up': 'Sign up',
 'site': 'sitio',
 'Size of cache:': 'Tamaño de la Caché:',
 'some files could not be removed': 'algunos archivos no pudieron ser removidos',

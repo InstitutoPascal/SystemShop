@@ -131,120 +131,23 @@ auth.settings.reset_password_requires_verification = True
 # -------------------------------------------------------------------------
 # auth.enable_record_versioning(db)
 
-#############################COMIENZO DE LA TABLA "PRODUCTOS"###################################
-db.define_table('productos',
-   Field('id_producto', 'string',),
-   Field('codigo_barras', 'string'),
-   Field('cantidad','integer'),
-   Field('nombre','string'),
-   Field('marca','string'),
-   Field('descripcion','string'),
-   Field('categoria','string'),
-   Field('precio','float'),
-   Field('proveedor','string'),
-   Field('codigo_producto','string'),
-   Field('fecha_ingreso','string'),
-   Field('numero_remito','integer'),
-   Field('numero_lote','integer'),
-   Field('imagen','upload'),
-   Field('observaciones','text'),
-   Field('alicuota_iva','float')
+db.define_table ('productos',
+                 db.Field("id_producto","id"),  #agregada by enrique
+                 #db.Field('id','integer'),
+                 db.Field('codigo_barras', 'string'),
+                 db.Field('cantidad_prod','integer'),
+                 db.Field ('nombre','string'),
+                 db.Field ('marca','string'),
+                 db.Field('descripcion','string'),
+                 db.Field('envase','string'),
+                 db.Field ('categoria','string'),
+                 db.Field('precio','float'),
+                 db.Field('proveedor','string'),
+                 db.Field ('codigo_producto','string'),
+                 db.Field ('fecha_ingreso','string'),
+                 db.Field('numero_remito','integer'),
+                 db.Field('numero_lote','integer'),
+                 db.Field('imagen','upload'),
+                 db.Field('observaciones','text'),
+                 db.Field('alicuota_iva','float') #agregada by enrique
                  )
-
-#############################FIN DE LA TABLA "PRODUCTOS"#################################
-
-
-#############################COMIENZO DE LA TABLA "VENTAS"###################################
-
-db.define_table('ventas',
-   Field('cantidad', 'string',),
-   Field('id_venta', 'integer',),
-   Field('id_producto', 'string',),
-               )
-#############################FIN DE LA TABLA "VENTAS"#################################
-
-
-#############################COMIENZO DE LA TABLA "PROVEEDOR"###################################
-
-db.define_table('proveedor',
-   Field('id_proveedor', 'string',),
-   Field('nombre', 'string',),
-   Field('telefono', 'integer',),
-   Field('direccion', 'string',),
-   Field('cuit_proveedor','string'),
-   Field('codigo_postal','integer'),
-   Field('localidad','string'),
-   Field('provincia','string'),
-   Field('pais','string'),
-   Field('telefono','integer'),
-   Field('email','string'),
-   Field('pagina_web','string'),
-   Field('estado',requires=IS_IN_SET(['activo','inactivo'])),
-   Field('observaciones','text'),
-                )
-#############################FIN DE LA TABLA "PROVEEDOR"#################################
-
-
-#############################COMIENZO DE LA TABLA "CATEGORIA"###################################
-
-
-#############################FIN DE LA TABLA "PROVEEDOR"#################################
-
-
-#############################COMIENZO DE LA TABLA "cliente"###################################
-##Clientes##
-db.define_table ('clientes',
-   Field('id_clientes','id'), 
-   Field ('codigo_cliente','integer'),
-   Field ('nombre','string'),
-   Field ('apellido','string'),
-   Field ('email','string'),  
-   Field ('dni','integer',unique=True),
-   Field('cuil','string'),
-   Field('sexo', requires=IS_IN_SET(['Masculino', 'Femenino', 'Otro'])),
-   Field('telefono','integer'),
-   Field('direccion','string'),
-   Field('localidad_cliente','string'),
-   Field('tipo_categoria', requires=IS_IN_SET(['Resp. Inscr.','Monotributo'])),  #agregada by enrique
-   Field ('provincia','string'),
-   Field ('pais','string'),
-   Field ('codigo_postal','integer'),
-   Field('estado', requires=IS_IN_SET(['activo','inactivo'])),
-   Field ('observaciones','text')
-                )
-
-
-#############################FIN DE LA TABLA "CLIENTE"###################################################
-##Categoria##
-
-#db.define_table ('categorias',
-#                db.Field('categoria','string'),
-#                 primarykey=['categoria'] )
-#db.categorias_prod.categoria.requires=IS_UPPER(),IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(8, error_message='Solo hasta 8 caracteres')
-
-####################33########COMIENZO TABLA STOCK#########################################################
-db.define_table ('stock',
-   Field('codigo_producto','string'),
-   Field ('nombre','string'),
-   Field ('marca','string'),
-   Field ('categoria','string'),
-   Field('fecha_ingreso','string'),
-   Field('fecha_salida','string')
-                )
-
-####################33########FIN TABLA STOCK #########################################################
-
-####################33########COMIENZO TABLA COMPRAS#########################################################
-db.define_table ('compras',
-   Field('codigo_producto','string'),
-   Field ('nombre','string'),
-   Field ('marca','string'),
-   Field ('categoria','string'),
-   Field ('precio','integer'),
-   Field('fecha_ingreso','string'),
-   Field('proveedor','string'),
-   Field('remito','string'),
-   Field('cantidad','integer')
-                )
-
-####################33########FIN TABLA COMPRAS #########################################################
