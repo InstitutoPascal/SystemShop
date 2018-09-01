@@ -148,6 +148,7 @@ db.define_table('productos',
    Field('numero_lote','integer'),
    Field('imagen','upload'),
    Field('observaciones','text'),
+   Field('alicuota_iva','float')
                  )
 
 #############################FIN DE LA TABLA "PRODUCTOS"#################################
