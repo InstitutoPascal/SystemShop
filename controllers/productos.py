@@ -62,3 +62,8 @@ def mostrar():
     response.headers['Content-Type'] = formato
     # devolver al navegador el contenido de la image
     return stream
+
+
+def cancelar_venta():
+    del session["items_venta"]
+    return dict()

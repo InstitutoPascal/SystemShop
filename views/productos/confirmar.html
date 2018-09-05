@@ -1,3 +1,12 @@
 {{extend 'layout.html'}}
-<h1>Está es la plantilla productos/confirmar.html</h1>
-{{=BEAUTIFY(response._vars)}}
+<center>
+<br /><br /><br />
+<h2 align="center"> ¿Confirma venta Por el importe de:<b> "${{=total}}"?</b></h2>
+<br />
+    <a mp-mode="dftl" href="{{=URL(c="mercado_pago",f="index")}}" name="MP-payButton" class="btn btn-success" >Pagar con mercado pago<i class="glyphicon glyphicon-send" ></i></a>
+    <a type="cargar" class="btn btn-warning"  href="{{=URL(c="productos",f="carrito")}}" > Volver al listado <i class="glyphicon glyphicon-remove" ></i> </a>
+    <a type="cargar" class="btn btn-danger" href="{{=URL(c="productos",f="cancelar_venta")}}">  Cancelar Venta <i class="glyphicon glyphicon-remove" ></i></a>
+
+
+</center>
+}
