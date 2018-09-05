@@ -5,9 +5,10 @@
 # File is released under public domain and you can use without limitations
 # -------------------------------------------------------------------------
 
-if request.global_settings.web2py_version < "2.14.1":
-    raise HTTP(500, "Requires web2py 2.13.3 or newer")
-
+#if request.global_settings.web2py_version < "2.14.1":
+  #  raise HTTP(500, "Requires web2py 2.17.1 or newer")
+if request.global_settings.web2py_version < "2.15.5":
+    raise HTTP(500, "Requires web2py 2.15.5 or newer")
 # -------------------------------------------------------------------------
 # if SSL/HTTPS is properly configured and you want all HTTP requests to
 # be redirected to HTTPS, uncomment the line below:
@@ -131,23 +132,23 @@ auth.settings.reset_password_requires_verification = True
 # -------------------------------------------------------------------------
 # auth.enable_record_versioning(db)
 
-db.define_table ('productos',
-                 db.Field("id_producto","id"),  #agregada by enrique
-                 #db.Field('id','integer'),
-                 db.Field('codigo_barras', 'string'),
-                 db.Field('cantidad_prod','integer'),
-                 db.Field ('nombre','string'),
-                 db.Field ('marca','string'),
-                 db.Field('descripcion','string'),
-                 db.Field('envase','string'),
-                 db.Field ('categoria','string'),
-                 db.Field('precio','float'),
-                 db.Field('proveedor','string'),
-                 db.Field ('codigo_producto','string'),
-                 db.Field ('fecha_ingreso','string'),
-                 db.Field('numero_remito','integer'),
-                 db.Field('numero_lote','integer'),
-                 db.Field('imagen','upload'),
-                 db.Field('observaciones','text'),
-                 db.Field('alicuota_iva','float') #agregada by enrique
+
+db.define_table('productos',
+   Field('id_producto', 'string',),
+   Field('codigo_barras', 'string'),
+   Field('cantidad','integer'),
+   Field('nombre','string'),
+   Field('marca','string'),
+   Field('descripcion','string'),
+   Field('categoria','string'),
+   Field('precio','float'),
+   Field('proveedor','string'),
+   Field('codigo_producto','string'),
+   Field('fecha_ingreso','string'),
+   Field('numero_remito','integer'),
+   Field('numero_lote','integer'),
+   Field('alicuota_iva','float'),
+   Field('imagen','upload'),
+   Field('observaciones','text'),
+
                  )

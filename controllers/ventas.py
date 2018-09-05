@@ -1,6 +1,13 @@
 def venta_productos():
-    regs = db(db.productos.id_producto>0).select()
-    return dict(productos=regs)
+
+    # buscar todos los productos:
+    condicion = db.productos.marca == 'mica'
+    campos = db.productos.nombre, db.productos.id_producto, db.productos.descripcion, db.productos.precio
+    registros = db(condicion).select(*campos)
+
+    # vista generica para pruebas:
+    #response.view = "generic.html"
+    return dict(registros=registros)
 
 def carrito():
     # obtengo los valores del formulario

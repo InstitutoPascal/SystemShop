@@ -71,13 +71,10 @@ response.menu += [
                 (T('Proveedores'), False, URL('compras', 'compras_proveedores'),[])])]
 
 response.menu += [
-            (T('ventas'), False, URL('ventas','index'), [
+            (T('ventas'), False, URL('productos','index'), [
                 (T('Ventas Local'), False, URL('ventas', 'venta_local'),[]),
-                (T('Ventas Online'), False, URL('ventas', 'venta_productos'),[]),
+                (T('Ventas Online'), False, URL('productos', 'venta_productos'),[]),
         ])]
 
 if DEVELOPMENT_MENU:
     _()
-
-if "auth" in locals():
-    auth.wikimenu()

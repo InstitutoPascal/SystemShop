@@ -1,7 +1,7 @@
 {{extend 'layout.html'}}
 
 <div class="row">
-{{for reg in productos: }}
+{{for reg in registros: }}
 <form class="form-horizontal" action="{{=URL(c="ventas",f="carrito")}}" enctype="multipart/form-data" method="POST">
   <div class="col-xs-1 col-sm-1">
     <div class="thumbnail">
