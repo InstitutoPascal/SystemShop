@@ -118,3 +118,10 @@
 [2018-09-07 09:26:27] EDIT SystemShop_github/views/reportes/reportes_clientes.html: 12
 [2018-09-07 09:27:38] EDIT SystemShop_github/models/menu.py: 1
 [2018-09-07 09:30:20] DELETE SystemShop_github/views/reportes_clientes.html: -3
+[2018-09-07 09:33:49] EDIT SystemShop_github/controllers/compras.py: 81
+[2018-09-07 09:35:45] EDIT SystemShop_github/views/compras/compras_proveedores.html: 56
+[2018-09-07 09:38:44] EDIT SystemShop_github/models/db.py: 1
+[2018-09-07 09:40:16] EDIT SystemShop_github/views/compras/guardar_producto.html: 3
+[2018-09-07 09:41:06] EDIT SystemShop_github/views/compras/listados_proveedores.html: 12
+[2018-09-07 09:43:55] EDIT SystemShop_github/views/compras/confirmar_compra.html: 7
+[2018-09-07 09:46:30] EDIT SystemShop_github/views/compras/cancelar_venta.html: 5

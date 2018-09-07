@@ -1,3 +1,17 @@
 {{extend 'layout.html'}}
-<h1>Está es la plantilla compras/listados_proveedores.html</h1>
-{{=BEAUTIFY(response._vars)}}
+
+<h1>compra de producto</h1>
+<form class="form-horizontal" enctype="multipart/form-data" >
+
+   <!-- ------MOSTRAR EMPLEADO ACTUAL ------------------ -->
+  <div class="form-group">
+    <label for="empleado_logeado"  class="col-sm-1 control-label">usuario: </label>
+      <div class="col-sm-2">
+           <h1><p method="POST" class="form-control" id="empleado_logeado" name="first_name" >
+          <!--   obtenemos los nombres de usuarios y los procesamos -->
+        {{for userlog in usuario_log:}}
+      <!-- mostramos el nombre y apellido del usuario logeado -->
+   {{=userlog.first_name}} {{=userlog.last_name}}</p></h1>
+        {{pass}}
+    </div>
+ </div>
