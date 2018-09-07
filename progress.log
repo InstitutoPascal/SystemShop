@@ -117,3 +117,4 @@
 [2018-09-07 09:26:07] CREATE reportes/reportes_clientes.html: 0
 [2018-09-07 09:26:27] EDIT SystemShop_github/views/reportes/reportes_clientes.html: 12
 [2018-09-07 09:27:38] EDIT SystemShop_github/models/menu.py: 1
+[2018-09-07 09:30:20] DELETE SystemShop_github/views/reportes_clientes.html: -3
