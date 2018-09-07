@@ -125,3 +125,13 @@
 [2018-09-07 09:41:06] EDIT SystemShop_github/views/compras/listados_proveedores.html: 12
 [2018-09-07 09:43:55] EDIT SystemShop_github/views/compras/confirmar_compra.html: 7
 [2018-09-07 09:46:30] EDIT SystemShop_github/views/compras/cancelar_venta.html: 5
+[2018-09-07 09:50:55] EDIT SystemShop_github/controllers/altas.py: 0
+[2018-09-07 09:52:04] EDIT SystemShop_github/controllers/altas.py: 7
+[2018-09-07 09:52:59] EDIT SystemShop_github/controllers/altas.py: 7
+[2018-09-07 09:53:24] EDIT SystemShop_github/views/altas/alta_proveedor.html: 0
+[2018-09-07 09:54:18] EDIT SystemShop_github/views/altas/alta_clientes.html: 0
+[2018-09-07 09:55:19] EDIT SystemShop_github/views/altas/alta_productos.html: 0
+[2018-09-07 09:55:31] EDIT SystemShop_github/views/altas/alta_clientes.html: 0
+[2018-09-07 09:55:33] EDIT SystemShop_github/views/altas/alta_empleados.html: 0
+[2018-09-07 09:55:35] EDIT SystemShop_github/views/altas/alta_proveedor.html: 0
+[2018-09-07 09:55:38] EDIT SystemShop_github/views/altas/alta_productos.html: 0
