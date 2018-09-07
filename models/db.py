@@ -152,3 +152,104 @@ db.define_table('productos',
    Field('observaciones','text'),
 
                  )
+
+#############################COMIENZO DE LA TABLA "PROVEEDOR"###################################
+
+db.define_table('proveedor',
+   Field('id_proveedor', 'string',),
+   Field('nombre', 'string',),
+   Field('telefono', 'integer',),
+   Field('direccion', 'string',),
+   Field('cuit_proveedor','string'),
+   Field('codigo_postal','integer'),
+   Field('localidad','string'),
+   Field('provincia','string'),
+   Field('pais','string'),
+   Field('telefono','integer'),
+   Field('email','string'),
+   Field('pagina_web','string'),
+   Field('estado',requires=IS_IN_SET(['activo','inactivo'])),
+   Field('observaciones','text'),
+                )
+#############################FIN DE LA TABLA "PROVEEDOR"#################################
+
+
+
+#############################COMIENZO DE LA TABLA "cliente"###################################
+##Clientes##
+db.define_table ('clientes',
+   Field('id_clientes','id'), 
+   Field ('codigo_cliente','integer'),
+   Field ('nombre','string'),
+   Field ('apellido','string'),
+   Field ('email','string'),  
+   Field ('dni','integer',unique=True),
+   Field('cuil','string'),
+   Field('sexo', requires=IS_IN_SET(['Masculino', 'Femenino', 'Otro'])),
+   Field('telefono','integer'),
+   Field('direccion','string'),
+   Field('localidad_cliente','string'),
+   Field('tipo_categoria', requires=IS_IN_SET(['Resp. Inscr.','Monotributo'])),  #agregada by enrique
+   Field ('provincia','string'),
+   Field ('pais','string'),
+   Field ('codigo_postal','integer'),
+   Field('estado', requires=IS_IN_SET(['activo','inactivo'])),
+   Field ('observaciones','text')
+                )
+
+
+#############################FIN DE LA TABLA "CLIENTE"###################################################
+##Categoria##
+
+#db.define_table ('categorias',
+#                db.Field('categoria','string'),
+#                 primarykey=['categoria'] )
+#db.categorias_prod.categoria.requires=IS_UPPER(),IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(8, error_message='Solo hasta 8 caracteres')
+
+####################33########COMIENZO TABLA STOCK#########################################################
+db.define_table ('stock',
+   Field('codigo_producto','string'),
+   Field ('nombre','string'),
+   Field ('marca','string'),
+   Field ('categoria','string'),
+   Field('fecha_ingreso','string'),
+   Field('fecha_salida','string')
+                )
+
+####################33########FIN TABLA STOCK #########################################################
+
+####################33########COMIENZO TABLA COMPRAS#########################################################
+db.define_table ('compras',
+   Field('codigo_producto','string'),
+   Field ('nombre','string'),
+   Field ('marca','string'),
+   Field ('categoria','string'),
+   Field ('precio','integer'),
+   Field('fecha_ingreso','string'),
+   Field('proveedor','string'),
+   Field('remito','string'),
+   Field('cantidad','integer')
+                )
+
+####################33########FIN TABLA COMPRAS #########################################################
+
+#############################COMIENZO DE LA TABLA EMPLEADOS#################################
+db.define_table('empleados',
+   Field('usuario_id', db.auth_user, default=auth.user_id ),
+   Field('codigo_empleados','integer'),
+   Field('dni','integer'),
+   Field('apellido','string'),
+   Field('nombre','string'),
+   Field('usuario','string'),
+   Field('password','password'),
+   Field('email','string'),
+   Field('direccion', 'string'),
+   Field('localidad','string'),
+   Field('codigo_postal','integer'),
+   Field('provincia','string'),
+   Field('pais','string'),
+   Field('telefono','string'),
+   Field('fecha_ingreso','date'),
+   Field('estado', requires=IS_IN_SET(['activo','inactivo'])),
+   Field('cargo','string'),
+   Field('sector','string'),)

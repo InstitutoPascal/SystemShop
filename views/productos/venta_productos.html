@@ -10,9 +10,10 @@
         <h6>{{=reg.nombre}}</h6>
         <p>${{=reg.precio}}</p>
         <p>
+           <a href="{{=URL(c='carrito',f='ver', args=[reg.id_producto])}}" class="btn btn-primary" role="button">Agregar a Carrito <i class="glyphicon glyphicon-shopping-cart" ></i></a>
             <input type="hidden" name="producto" value="{{=reg.id_producto}}" />
-            <input type="number" name="cantidad" value="1" />
-            <input type="submit" role="button" class="btn btn-danger btn-lg" name="comprar" value="Comprar" />
+            <input type="number"  name="cantidad" value="1" style="max-height: 36px; max-width: 40px;"/>
+            <!--<input type="submit" role="button" class="btn btn-danger btn-lg" name="comprar" value="Comprar" />-->
           </p>
       </div>
     </div>

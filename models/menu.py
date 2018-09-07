@@ -63,6 +63,8 @@ response.menu += [
                 (T('Ventas Online'), False, URL('reportes','reportes_venta_online' ),[]),
                 (T('Ventas Local'), False, URL('reportes','reportes_venta_local' ),[]),
                 (T('Proveedores'), False, URL('reportes','reportes_proveedores' ),[]),
+                (T('Clientes'), False, URL('reportes','reportes_clientes' ),[]),
+
 
                 ])]
 
