@@ -260,3 +260,5 @@
 [2018-09-16 00:49:43] EDIT SystemShop_github/controllers/modificacion.py: 0
 [2018-09-16 00:56:15] EDIT SystemShop_github/models/menu_administrador.py: 37
 [2018-09-16 02:16:27] EDIT SystemShop_github/models/menu_administrador.py: -18
+[2018-09-19 00:49:33] DELETE SystemShop_github/static/images/mica.png: -65
+[2018-09-19 00:49:46] DELETE SystemShop_github/static/images/fondo1.jpg: -173
