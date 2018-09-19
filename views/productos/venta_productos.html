@@ -1,8 +1,11 @@
+<a href="http://127.0.0.1:8000/SystemShop_github/default/index"> <img src="http://127.0.0.1:8000/ss/static/images/logo.png" class="img-rounded" alt="Cinque Terre" width="150" height="143"></a>
+
+
 {{extend 'layout.html'}}
 
-<div class="row">
 {{for reg in registros: }}
-<form class="form-horizontal" action="{{=URL(c="productos",f="carrito")}}" enctype="multipart/form-data" method="POST">
+<div class="row">
+<form class="form-horizontal" action="{{=URL(c='productos',f='carrito')}}" enctype="multipart/form-data" method="POST">
   <div class="col-xs-2 col-sm-3">
     <div class="thumbnail">
       <img class="img-responsive img-thumbnail" src="{{=URL(f='mostrar', args=[reg.id_producto])}}" style="max-height: 200px; max-width: 100px;" alt="...">
@@ -10,11 +13,10 @@
         <h6>{{=reg.nombre}}</h6>
         <p>${{=reg.precio}}</p>
         <p>
-           <a href="{{=URL(c='carrito',f='ver', args=[reg.id_producto])}}" class="btn btn-primary" role="button">Agregar a Carrito <i class="glyphicon glyphicon-shopping-cart" ></i></a>
             <input type="hidden" name="producto" value="{{=reg.id_producto}}" />
-            <input type="number"  name="cantidad" value="1" style="max-height: 36px; max-width: 40px;"/>
-            <!--<input type="submit" role="button" class="btn btn-danger btn-lg" name="comprar" value="Comprar" />-->
-          </p>
+            <input type="number" name="cantidad" value="1" style="max-height: 70px; max-width: 80px;"/>
+            <input type="submit" role="button" class="btn btn-danger btn-lg" name="comprar" value="Comprar" />
+        </p>
       </div>
     </div>
   </div>
