@@ -9,6 +9,7 @@
   #  raise HTTP(500, "Requires web2py 2.17.1 or newer")
 if request.global_settings.web2py_version < "2.15.5":
     raise HTTP(500, "Requires web2py 2.15.5 or newer")
+
 # -------------------------------------------------------------------------
 # if SSL/HTTPS is properly configured and you want all HTTP requests to
 # be redirected to HTTPS, uncomment the line below:
@@ -91,7 +92,41 @@ plugins = PluginManager()
 # -------------------------------------------------------------------------
 # create all tables needed by auth if not custom tables
 # -------------------------------------------------------------------------
-auth.define_tables(username=False, signature=False)
+
+# after
+# auth = Auth(globals(),db)
+db.define_table(
+    auth.settings.table_user_name,
+    Field('dni', 'integer',label=T('DNI')),
+    Field('first_name', length=128, default='', label=T('Nombres')),
+    Field('last_name', length=128, default='',label=T('Apellido')),
+    Field('email', length=128, default='', unique=True,label=T('Correo electrónico')),
+    Field('username', length=128,label=T('Nombre de Usuario')),
+    Field('password', 'password', length=512,
+          readable=False, label=T('Password')),
+    Field('registration_key', length=512,
+          writable=False, readable=False, default=''),
+)
+
+custom_auth_table = db[auth.settings.table_user_name] # get the custom_auth_table
+custom_auth_table.first_name.requires = IS_NOT_EMPTY(error_message=auth.messages.is_empty)
+custom_auth_table.last_name.requires = IS_NOT_EMPTY(error_message=auth.messages.is_empty)
+custom_auth_table.password.requires = [CRYPT()]
+custom_auth_table.email.requires = [
+  IS_EMAIL(error_message=auth.messages.invalid_email),
+  IS_NOT_IN_DB(db, custom_auth_table.email)]
+auth.settings.table_user = custom_auth_table # tell auth to use custom_auth_table
+# before
+# auth.define_tables()
+
+
+
+
+
+# -------------------------------------------------------------------------
+# create all tables needed by auth if not custom tables
+# -------------------------------------------------------------------------
+auth.define_tables(username=True, signature=False)
 
 # -------------------------------------------------------------------------
 # configure email
@@ -107,8 +142,9 @@ mail.settings.ssl = myconf.get('smtp.ssl') or False
 # configure auth policy
 # -------------------------------------------------------------------------
 auth.settings.registration_requires_verification = False
-auth.settings.registration_requires_approval = False
+auth.settings.registration_requires_approval = True
 auth.settings.reset_password_requires_verification = True
+auth.settings.create_user_groups=False
 
 # -------------------------------------------------------------------------
 # Define your tables below (or better in another model file) for example
@@ -131,7 +167,6 @@ auth.settings.reset_password_requires_verification = True
 # after defining tables, uncomment below to enable auditing
 # -------------------------------------------------------------------------
 # auth.enable_record_versioning(db)
-
 
 db.define_table('productos',
    Field('id_producto', 'string',),

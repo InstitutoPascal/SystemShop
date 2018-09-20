@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # this file is released under public domain and you can use without limitations
 
 # ----------------------------------------------------------------------------------------------------------------------
@@ -6,7 +5,7 @@
 # ----------------------------------------------------------------------------------------------------------------------
 
 response.logo = A(B('SystemShop'), XML('&trade;&nbsp;'),
-                  _class="navbar-brand", _href="http://127.0.0.1:8000/SystemShop",
+                  _class="navbar-brand", _href="http://127.0.0.1:8000/SystemShop_github",
                   _id="web2py-logo")
 response.title = request.application.replace('_', ' ').title()
 response.subtitle = ''
@@ -28,14 +27,41 @@ response.google_analytics_id = None
 # this is the main application menu add/remove items as required
 # ----------------------------------------------------------------------------------------------------------------------
 
-
-DEVELOPMENT_MENU = True
+response.menu = [
+    (T('Inicio'), False, URL('default', 'index'), [])
+]
 
 
 # ----------------------------------------------------------------------------------------------------------------------
 # provide shortcuts for development. remove in production
 # ----------------------------------------------------------------------------------------------------------------------
 
+
+response.menu += [
+            (T('Categorias'), False, URL('productos','index'), [
+                (T('Almacen'), False, URL('productos', 'venta_productos'),[]),
+                (T('Bebidas'), False, URL('productos', 'venta_bebidas'),[]),
+                (T('Limpieza'), False, URL('productos', 'venta_limpieza'),[]),
+
+
+        ])]
+
+response.menu += [
+                (T('Almacen'), False, URL('productos', 'venta_productos'),[
+        ])]
+response.menu += [
+
+                (T('Bebidas'), False, URL('productos', 'venta_bebidas'),[
+
+        ])]
+response.menu += [
+                (T('Limpieza'), False, URL('productos', 'venta_limpieza'),[
+
+        ])]
+DEVELOPMENT_MENU = True
+# ----------------------------------------------------------------------------------------------------------------------
+# provide shortcuts for development. remove in production
+# ----------------------------------------------------------------------------------------------------------------------
 def _():
     # ------------------------------------------------------------------------------------------------------------------
     # shortcuts
@@ -46,37 +72,4 @@ def _():
     # useful links to internal and external resources
     # ------------------------------------------------------------------------------------------------------------------
 
-#------------------------------------------------------------------------------------------------------------------------------------02-05-17
-
-#---------------------------------------------------------------------------------------------------------------------------------------
-response.menu += [
-            (T('Altas'), False, URL('altas','index'), [
-                (T('Productos'), False, URL('altas', 'alta_productos'),[]),
-                (T('Empleados'), False, URL('altas', 'alta_empleados'),[]),
-                (T('Proveedores'), False, URL('altas', 'alta_proveedor'),[]),
-                (T('Clientes'), False,URL('altas', 'alta_clientes'),[])])]
-
-response.menu += [
-            (T('Reportes'), False, URL('reportes','index'), [
-                (T('Productos'), False, URL('reportes','reportes_productos' ),[]),
-                (T('Empleados'), False, URL('reportes','reportes_empleados' ),[]),
-                (T('Ventas Online'), False, URL('reportes','reportes_venta_online' ),[]),
-                (T('Ventas Local'), False, URL('reportes','reportes_venta_local' ),[]),
-                (T('Proveedores'), False, URL('reportes','reportes_proveedores' ),[]),
-                (T('Clientes'), False, URL('reportes','reportes_clientes' ),[]),
-
-
-                ])]
-
-response.menu += [
-            (T('Compras'), False, URL('compras','index'), [
-                (T('Proveedores'), False, URL('compras', 'compras_proveedores'),[])])]
-
-response.menu += [
-            (T('ventas'), False, URL('productos','index'), [
-                (T('Ventas Local'), False, URL('ventas', 'venta_local'),[]),
-                (T('Ventas Online'), False, URL('productos', 'venta_productos'),[]),
-        ])]
-
-if DEVELOPMENT_MENU:
-    _()
+#--------------------------------------------------------------------------------------------------------------

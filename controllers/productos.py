@@ -1,14 +1,32 @@
+#Funcion de almacen
 def venta_productos():
-    registros = db(db.productos.id_producto>0).select()
-    # buscar todos los productos:
-    #condicion = db.productos.marca == 'mica'
-    #campos = db.productos.nombre, db.productos.id_producto, db.productos.descripcion, db.productos.precio
-    #registros = db(condicion).select(*campos)
 
-    # vista generica para pruebas:
-    #response.view = "generic.html"
+    # buscar todos los productos:
+    condicion = db.productos.marca == 'almacen'
+    campos = db.productos.nombre, db.productos.id_producto, db.productos.descripcion, db.productos.precio
+    registros = db(condicion).select(*campos)
     return dict(registros=registros)
 
+#Funcion de bebidas
+def venta_bebidas():
+
+    # buscar todos los productos:
+    condicion = db.productos.marca == 'bebidas'
+    campos = db.productos.nombre, db.productos.id_producto, db.productos.descripcion, db.productos.precio
+    registros = db(condicion).select(*campos)
+    return dict(registros=registros)
+
+#Funcion de menu limpieza
+def venta_limpieza():
+
+    # buscar todos los productos:
+    condicion = db.productos.marca == 'limpieza'
+    campos = db.productos.nombre, db.productos.id_producto, db.productos.descripcion, db.productos.precio
+    registros = db(condicion).select(*campos)
+    return dict(registros=registros)
+
+
+#Funcion del carrito
 def carrito():
     # obtengo los valores del formulario
     if request.vars["producto"]:
