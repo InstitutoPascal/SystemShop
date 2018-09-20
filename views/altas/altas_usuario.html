@@ -1,0 +1,37 @@
+{{extend 'layout_administrador.html'}}
+ <body style="background-color:#BAFFFD">
+<BR>
+<FONT  SIZE ='3' COLOR ='#000000'>
+
+
+<BR><P/>
+
+<CENTER>
+    <H3>
+    <TABLE border="2" width="1250">
+        <TR>
+            <TH width="150" bgcolor="#cdcdcd"><CENTER><BR>DNI<BR></CENTER></TH> 
+            <TH width="300" bgcolor="#cdcdcd"><CENTER><BR>APELLIDO<BR></CENTER></TH>
+            <TH width="300" bgcolor="#cdcdcd"><CENTER><BR>NOMBRE<BR></CENTER></TH>
+            <TH width="500" bgcolor="#cdcdcd"><CENTER><BR>ACCIONES<BR></CENTER></TH>
+        </TR>
+        {{for x in registrados:}}
+            <TR>
+                <TD><BR><CENTER>{{=x.dni}}</CENTER><BR></TD>
+                <TD><BR><CENTER>{{=x.last_name}}</CENTER><BR></TD>
+                <TD><BR><CENTER>{{=x.first_name}}</CENTER><BR></TD>
+                <TD><BR><CENTER> 
+                    {{=A('Empleado',_href=URL(r=request, f='definir_rol', args=[x.id, 'Empleado']) )}} - 
+                    {{=A('Supervisor',_href=URL(r=request, f='definir_rol', args=[x.id , 'Supervisor']) )}} - 
+                    {{=A('Rechazado',_href=URL(r=request, f='eliminar_registrado', args=[x.id]) )}} 
+                    </CENTER><BR></TD></TR>
+            {{pass}}
+  </TABLE>
+
+  </H3>
+</CENTER>
+<BR><P/>
+<BR><P/>
+<H4>
+{{=T('Listado por: ')}} {{=nombre}} {{=apellido}} {{=T('.')}}<BR><P/><BR><P/>
+</H4>
