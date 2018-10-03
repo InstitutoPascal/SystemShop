@@ -542,3 +542,8 @@
 [2018-10-03 18:15:38] EDIT SystemShop_github/views/default/index.html: 0
 [2018-10-03 18:16:18] EDIT SystemShop_github/views/default/index.html: 0
 [2018-10-03 18:16:36] EDIT SystemShop_github/views/default/index.html: 0
+[2018-10-03 18:24:06] DELETE SystemShop_github/static/images/admin.jpg: -108
+[2018-10-03 18:24:20] DELETE SystemShop_github/static/images/joni.jpg: -42
+[2018-10-03 18:24:27] DELETE SystemShop_github/static/images/bagley.jpg: -371
+[2018-10-03 18:24:43] DELETE SystemShop_github/static/images/fondo5.jpg: -74
+[2018-10-03 18:24:54] DELETE SystemShop_github/static/images/administrador.jpg: -109
