@@ -1,0 +1,12 @@
+{{extend 'layout.html'}}
+    <CENTER><B><U>{{=T('BAJA EMPLEADO')}}</U></B></CENTER>
+</H4>
+<center>
+    <TABLE border="3" width="400">
+                    <TR><TH width="200" bgcolor="#cdcdcd"><CENTER><BR>CLIENTES<BR></CENTER></TH></TR>
+                {{for x in id_empleados:}}
+                   <TR><TD><BR><CENTER>{{=A(x.empleado,_href=URL(r=request, f='reportes_empleados', args=[x.id]) )}}</CENTER><BR></TD></TR>
+                {{pass}}
+                       </TABLE>
+
+                    </CENTER>
