@@ -202,8 +202,6 @@ db.define_table('proveedor',
    Field('pais','string'),
    Field('telefono','integer'),
    Field('email','string'),
-   Field('nombre_empresa','string'),
-   Field('pagina_web','string'),
    Field('estado',requires=IS_IN_SET(['activo','inactivo'])),
    Field('observaciones','text'),
                 )
@@ -225,7 +223,7 @@ db.define_table ('clientes',
    Field('telefono','integer'),
    Field('direccion','string'),
    Field('localidad_cliente','string'),
-   Field('tipo_categoria', requires=IS_IN_SET(['Resp. Inscr.','Monotributo'])),  #agregada by enrique
+   Field('tipo_categoria', requires=IS_IN_SET(['Resp. Inscr.','Monotributo'])),  
    Field ('provincia','string'),
    Field ('pais','string'),
    Field ('codigo_postal','integer'),
@@ -268,24 +266,17 @@ db.define_table ('compras',
                 )
 
 ####################33########FIN TABLA COMPRAS #########################################################
-
 #############################COMIENZO DE LA TABLA EMPLEADOS#################################
-db.define_table('empleados',
-   Field('usuario_id', db.auth_user, default=auth.user_id ),
-   Field('codigo_empleados','integer'),
-   Field('dni','integer'),
-   Field('apellido','string'),
-   Field('nombre','string'),
-   Field('usuario','string'),
-   Field('password','password'),
-   Field('email','string'),
-   Field('direccion', 'string'),
-   Field('localidad','string'),
-   Field('codigo_postal','integer'),
-   Field('provincia','string'),
-   Field('pais','string'),
-   Field('telefono','string'),
-   Field('fecha_ingreso','date'),
-   Field('estado', requires=IS_IN_SET(['activo','inactivo'])),
-   Field('cargo','string'),
-   Field('sector','string'),)
+
+db.define_table('empleado',
+   Field('id_empleado', 'string',),
+   Field('apellido', 'string',),
+   Field('nombres','string',),
+   Field ('dni','integer',label=T ('DNI')),
+   Field('fecha_de_nacimiento', 'date',),
+   Field('nacionalidad', 'string',),
+   Field('sexo', 'string',),
+   Field('localidad', 'string',),
+   Field('correo_electronico', 'string',label=T('Correo Electrónico',)),
+   Field('ocupado','string',)
+               )

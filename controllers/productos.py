@@ -2,7 +2,7 @@
 def venta_productos():
 
     # buscar todos los productos:
-    condicion = db.productos.marca == 'almacen'
+    condicion = db.productos.categoria == 'almacen'
     campos = db.productos.nombre, db.productos.id_producto, db.productos.descripcion, db.productos.precio
     registros = db(condicion).select(*campos)
     return dict(registros=registros)
@@ -11,7 +11,7 @@ def venta_productos():
 def venta_bebidas():
 
     # buscar todos los productos:
-    condicion = db.productos.marca == 'bebidas'
+    condicion = db.productos.categoria == 'bebidas'
     campos = db.productos.nombre, db.productos.id_producto, db.productos.descripcion, db.productos.precio
     registros = db(condicion).select(*campos)
     return dict(registros=registros)
@@ -20,7 +20,7 @@ def venta_bebidas():
 def venta_limpieza():
 
     # buscar todos los productos:
-    condicion = db.productos.marca == 'limpieza'
+    condicion = db.productos.categoria == 'limpieza'
     campos = db.productos.nombre, db.productos.id_producto, db.productos.descripcion, db.productos.precio
     registros = db(condicion).select(*campos)
     return dict(registros=registros)

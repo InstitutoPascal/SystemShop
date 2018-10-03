@@ -2,15 +2,14 @@
 
 
 {{extend 'layout.html'}}
-
-{{for reg in registros: }}
 <div class="row">
+{{for reg in registros: }}
 <form class="form-horizontal" action="{{=URL(c='productos',f='carrito')}}" enctype="multipart/form-data" method="POST">
   <div class="col-xs-2 col-sm-3">
     <div class="thumbnail">
-      <img class="img-responsive img-thumbnail" src="{{=URL(f='mostrar', args=[reg.id_producto])}}" style="max-height: 200px; max-width: 100px;" alt="...">
+      <img class="img-responsive img-thumbnail" src="{{=URL(f='mostrar', args=[reg.id_producto])}}" style="max-height: 250px; max-width: 140px;" alt="...">
       <div class="caption">
-        <h6>{{=reg.nombre}}</h6>
+        <h5>{{=reg.nombre}}</h5>
         <p>${{=reg.precio}}</p>
         <p>
             <input type="hidden" name="producto" value="{{=reg.id_producto}}" />

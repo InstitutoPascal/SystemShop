@@ -5,7 +5,23 @@
 {{extend 'layout.html'}}
 
 {{block header}}
-     <!-- <style type = "text/css">
+<a href="{{=URL(r=request,c='default',f='index')}}"><IMG SRC="http://127.0.0.1:8000/SystemShop_github/static/images/logo.png" width="120"  height="100"  border="0"></IMG></a>
+
+        <FONT  SIZE ='3' COLOR ='white'>
+
+        <CENTER><H3><B> ¡BIENVENIDOS A SYSTEMSHOP! </B> </H3></center><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<FONT  SIZE ='3' COLOR ='white'>
+<ul>
+    <h4><b>
+        <li>Desde SystemShop podras comprar online los productos que necesitas...</li><br><br>
+        <li>Para ingresar y poder comprar los productos tenés que ser usuario registrado.</li><br><br>
+        <li>Si no sos usuario podes registrarte o ingresar desde los botones que aparecen más abajo </li></h4></b></FONT>
+            </FONT>
+</ul>
+
+<!-- <style type = "text/css">
 body {
 background: url('/SystemShop/static/images/carrito.jpg') no-repeat;
 background-size: 100%
@@ -14,7 +30,7 @@ background-size: 100%
             <style>          
                body::after {
                  content: "";
-                   background: url("{{=URL('static','/images/carrito.jpg')}}");
+                   background: url("{{=URL('static','/images/fondo7.jpg')}}");
                  background-repeat:no-repeat;
                  background-size: cover;
                  background-attachment:fixed;
@@ -30,5 +46,18 @@ background-size: 100%
 
             </style>
      </head>
-   
+
 {{end}}
+
+    <br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="{{=URL(r=request,c='productos',f='venta_productos')}}">
+            <IMG SRC="http://127.0.0.1:8000/SystemShop_github/static/images/ver_producto.png" width="220"  height="110" ></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{{=URL(r=request,c='productos',f='venta_productos')}}"  >
+    <IMG SRC="http://127.0.0.1:8000/SystemShop_github/static/images/registro.png" width="200"  height="100"></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{{=URL(r=request,c='productos',f='venta_productos')}}">
+    <IMG SRC="http://127.0.0.1:8000/SystemShop_github/static/images/ingresa.png"  ></a>

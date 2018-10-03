@@ -22,7 +22,7 @@ def alta_productos():
 
 #alta_empleado
 def alta_empleados():
-    form = SQLFORM(db.empleados)
+    form = SQLFORM(db.empleado)
     if form.accepts(request.vars, session):
         response.flash = 'Formulario aceptado'
     elif form.errors:

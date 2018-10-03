@@ -1,7 +1,7 @@
-<a href="http://127.0.0.1:8000/SystemShop_github/default/index"> <img src="http://127.0.0.1:8000/ss/static/images/logo.png" class="img-rounded" alt="Cinque Terre" width="150" height="143" ></a>
+<a href="http://127.0.0.1:8000/SystemShop_github/default/index"> <img src="http://127.0.0.1:8000/SystemShop_github/static/images/logo.png" class="img-rounded" alt="Cinque Terre" width="150" height="143" ></a>
 
 <body style="background-color:#A9A9F5;">
-{{extend 'layout.html'}}
+{{extend 'layout_administrador.html'}}
 
 
 <h1>Listado completo de productos</h1> <!-- Titulo  -->
@@ -10,8 +10,8 @@
     <TR BGCOLOR="#99f"><TH>CODIGO PRODUCTO</TH><TH>NOMBRE</TH><TH>MARCA</TH><TH>CATEGORIA</TH><TH>PRECIO</TH><TH>OPCIONES</TH></TR> <!-- Titulo de los campos -->
     {{for x in dc: }}
     <TR><TD>{{=x.codigo_producto}}</TD><TD>{{=x.nombre}}</TD><TD>{{=x.marca}}</TD><TD>{{=x.categoria}}</TD><TD>{{=x.precio}}</TD><TD> <!-- Campos de la tabla que seran consultados -->
-            <A type="button" class="btn btn-danger btn-xs" href="{{=URL(c='bajas', f='borrar_cliente', args=(x.id, ))}}">BORRAR</A> -  <!-- Permite borrar registros -->
-            <A type="button" class="btn btn-primary btn-xs" href="{{=URL(c='modificaciones', f='editar_proveedor', args=(x.id, ))}}">EDITAR</A> <!-- Permite modificar registros -->
+            <A type="button" class="btn btn-danger btn-xs" href="{{=URL(c='bajas', f='borrar_producto', args=(x.id, ))}}">BORRAR</A> -  <!-- Permite borrar registros -->
+            <A type="button" class="btn btn-primary btn-xs" href="{{=URL(c='modificacion', f='editar_producto', args=(x.id, ))}}">EDITAR</A> <!-- Permite modificar registros -->
         </TD></TD></TR>
     {{pass}}
 
