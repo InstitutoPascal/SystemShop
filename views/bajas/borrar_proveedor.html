@@ -1,0 +1,12 @@
+{{extend 'layout.html'}}
+    <CENTER><B><U>{{=T('BAJA PROVEEDOR')}}</U></B></CENTER>
+</H4>
+<center>
+    <TABLE border="3" width="400">
+                    <TR><TH width="200" bgcolor="#cdcdcd"><CENTER><BR>CLIENTES<BR></CENTER></TH></TR>
+                {{for x in id_proveedor:}}
+                   <TR><TD><BR><CENTER>{{=A(x.proveedor,_href=URL(r=request, f='reportes_proveedores', args=[x.id]) )}}</CENTER><BR></TD></TR>
+                {{pass}}
+                       </TABLE>
+
+                    </CENTER>
