@@ -1,5 +1,28 @@
 {{extend 'layout.html'}}
+<a href="http://127.0.0.1:8000/SystemShop_github/default/index"> <img src="http://127.0.0.1:8000/SystemShop_github/static/images/logo.png" class="img-rounded" alt="Cinque Terre" width="150" height="143"></a>
+<!--<body style="background-color:#A9A9F5;">-->
 
+    </body>
+<head>
+            <style>
+               body::after {
+                 content: "";
+                   background: url("{{=URL('static','/images/fondo_carrito.png')}}");
+                 background-repeat:no-repeat;
+                 background-size: 100%;
+                 background-attachment:fixed;
+
+                 opacity: 2;
+                 top: 0;
+                 left: 0;
+                 bottom: 0;
+                 right: 0;
+                 position: absolute;
+                 z-index: -1;   
+               }
+
+            </style>
+     </head>
 <h1>CARRITO DE SU COMPRA</h1>
 <form class="form-horizontal" action="{{=URL(c='productos', f='confirmar')}}"  enctype="multipart/form-data" method="POST" >
     <div class="form-group">

@@ -71,3 +71,6 @@ def call():
 def principal_administrador():
     
     return dict()
+def principal_clientes():
+    
+    return dict()

@@ -1,23 +1,45 @@
 <a href="http://127.0.0.1:8000/SystemShop_github/default/index"> <img src="http://127.0.0.1:8000/SystemShop_github/static/images/logo.png" class="img-rounded" alt="Cinque Terre" width="150" height="143"></a>
 
+<head>
+            <style>          
+               body::after {
+                 content: "";
+                   background: url("{{=URL('static','/images/productos.png')}}");
+                 background-repeat:no-repeat;
+                 background-size: cover;
+                 background-attachment:fixed;
 
+                 opacity: 2;
+                 top: 0;
+                 left: 0;
+                 bottom: 0;
+                 right: 0;
+                 position: absolute;
+                 z-index: -1;   
+               }
+
+            </style>
+     </head>
 {{extend 'layout.html'}}
+
 <div class="row">
+
+    
 {{for reg in registros: }}
 <form class="form-horizontal" action="{{=URL(c='productos',f='carrito')}}" enctype="multipart/form-data" method="POST">
-  <div class="col-xs-2 col-sm-3">
+    <div class="col-xs-2 col-sm-3">
     <div class="thumbnail">
-      <img class="img-responsive img-thumbnail" src="{{=URL(f='mostrar', args=[reg.id_producto])}}" style="max-height: 250px; max-width: 140px;" alt="...">
+      <img class="img-responsive img-thumbnail" src="{{=URL(f='mostrar', args=[reg.id_producto])}}" style="max-height: 200px; max-width: 100px;" alt="...">
       <div class="caption">
-        <h5>{{=reg.nombre}}</h5>
+        <h6>{{=reg.nombre}}</h6>
         <p>${{=reg.precio}}</p>
         <p>
             <input type="hidden" name="producto" value="{{=reg.id_producto}}" />
             <input type="number" name="cantidad" value="1" style="max-height: 70px; max-width: 80px;"/>
             <input type="submit" role="button" class="btn btn-danger btn-lg" name="comprar" value="Comprar" />
         </p>
-      </div>
     </div>
+      </div>
   </div>
     </form>
 {{pass}}

@@ -50,7 +50,7 @@ def carrito():
         session["items_venta"].append(item)
         #print"usuario ",session["vendedor_logueado"]
     return dict(items_venta=session["items_venta"])
-
+#@auth.requires_login()
 def confirmar():
     #reg_cliente = db(db.clientes.id==session["id_cliente"]).select().first()
     total = 0

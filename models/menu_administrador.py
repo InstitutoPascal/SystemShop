@@ -27,19 +27,12 @@ response.menu_administrador = [
 
 ######################################## FIN  DEL MENU ###############################################
 
-response.menu_administrador += [
-            (T('Compras'), False, '#',[
-                (T('Proveedores'), False, URL('compras', 'compras_proveedores'),[])
 
-
-                ])]
 
 response.menu_administrador += [
             (T('Reportes'), False, '#', [
                 (T('Productos'), False, URL('reportes','reportes_productos' ),[]),
                 (T('Empleados'), False, URL('reportes','reportes_empleados' ),[]),
-                (T('Ventas Online'), False, URL('reportes','reportes_venta_online' ),[]),
-                (T('Ventas Local'), False, URL('reportes','reportes_venta_local' ),[]),
                 (T('Proveedores'), False, URL('reportes','reportes_proveedores' ),[]),
                 (T('Clientes'), False, URL('reportes','reportes_clientes' ),[])
 
@@ -57,7 +50,14 @@ response.menu_administrador += [
 
                 ])]
 
+response.menu_administrador += [
+            (T('Categorias'), False, URL('productos','index'), [
+                (T('Almacen'), False, URL('productos', 'venta_productos'),[]),
+                (T('Bebidas'), False, URL('productos', 'venta_bebidas'),[]),
+                (T('Limpieza'), False, URL('productos', 'venta_limpieza'),[]),
 
+
+        ])]
 
 DEVELOPMENT_MENU = True
 

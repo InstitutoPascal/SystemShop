@@ -59,6 +59,29 @@ response.menu += [
 
         ])]
 DEVELOPMENT_MENU = True
+
+if auth.has_membership("Administrador"):
+    response.menu += [
+                (T('ABM'), False,'#', [
+                (T('Productos'), False, URL('altas', 'alta_productos'),[]),
+                (T('Empleados'), False, URL('altas', 'alta_empleados'),[]),
+                (T('Proveedores'), False, URL('altas', 'alta_proveedor'),[]),
+                (T('Clientes'), False,URL('altas', 'alta_clientes'),[]),
+                (T('Altas Usuarios'), False, URL('altas', 'altas_usuario'),[])
+
+
+                ])]
+
+
+response.menu += [
+            (T('Reportes'), False, '#', [
+                (T('Productos'), False, URL('reportes','reportes_productos' ),[]),
+                (T('Empleados'), False, URL('reportes','reportes_empleados' ),[]),
+                (T('Proveedores'), False, URL('reportes','reportes_proveedores' ),[]),
+                (T('Clientes'), False, URL('reportes','reportes_clientes' ),[])
+
+
+                ])]
 # ----------------------------------------------------------------------------------------------------------------------
 # provide shortcuts for development. remove in production
 # ----------------------------------------------------------------------------------------------------------------------

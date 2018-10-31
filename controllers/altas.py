@@ -43,11 +43,12 @@ def alta_clientes():
     return dict(f=form)
 #alta usuario
 def altas_usuario():
-    subtitulo=T('Listado de Usuarios Registrados Pendientes de Aprobación - Sistema de Datos Preocupacionales')#Asigna mensaje a mostrar
+    subtitulo=T('Listado de Usuarios Registrados Pendientes de Aprobación ')#Asigna mensaje a mostrar
     nombre=auth.user.first_name
     apellido=auth.user.last_name
     registrados = db(db.auth_user.registration_key == 'pending').select(db.auth_user.ALL)
     return dict(subtitulo=subtitulo, nombre=nombre, apellido=apellido, registrados=registrados)
+
 
 ###################################FIN FUNCION usuario para daministrador ###################################################
 

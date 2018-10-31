@@ -1,4 +1,24 @@
 <a href="http://127.0.0.1:8000/SystemShop_github/default/index"> <img src="http://127.0.0.1:8000/SystemShop_github/static/images/logo.png" class="img-rounded" alt="" width="150" height="143"></a>
+ <head>
+            <style>          
+               body::after {
+                 content: "";
+                   background: url("{{=URL('static','/images/productos.png')}}");
+                 background-repeat:no-repeat;
+                 background-size: cover;
+                 background-attachment:fixed;
+
+                 opacity: 2;
+                 top: 0;
+                 left: 0;
+                 bottom: 0;
+                 right: 0;
+                 position: absolute;
+                 z-index: -1;   
+               }
+
+            </style>
+     </head>
 
 
 {{extend 'layout.html'}}

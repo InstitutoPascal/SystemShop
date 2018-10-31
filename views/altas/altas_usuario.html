@@ -21,8 +21,8 @@
                 <TD><BR><CENTER>{{=x.last_name}}</CENTER><BR></TD>
                 <TD><BR><CENTER>{{=x.first_name}}</CENTER><BR></TD>
                 <TD><BR><CENTER> 
-                    {{=A('Empleado',_href=URL(r=request, f='definir_rol', args=[x.id, 'Empleado']) )}} - 
-                    {{=A('Supervisor',_href=URL(r=request, f='definir_rol', args=[x.id , 'Supervisor']) )}} - 
+                    {{=A('Administrador',_href=URL(r=request, f='definir_rol', args=[x.id, 'Administrador']) )}} - 
+                    {{=A('Clientes',_href=URL(r=request, f='definir_rol', args=[x.id , 'Clientes']) )}} - 
                     {{=A('Rechazado',_href=URL(r=request, f='eliminar_registrado', args=[x.id]) )}} 
                     </CENTER><BR></TD></TR>
             {{pass}}
