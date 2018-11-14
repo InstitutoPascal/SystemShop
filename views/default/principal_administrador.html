@@ -2,7 +2,7 @@
     Administracion
 </TITLE>
     </HEAD>
-{{extend 'layout.html'}}
+{{extend 'layout_administrador.html'}}
 <a href="http://127.0.0.1:8000/SystemShop_github/default/index"> <img src="http://127.0.0.1:8000/SystemShop_github/static/images/logo.png" class="img-rounded" alt="Cinque Terre" width="150" height="143"></a>
 <body style="background-color:#A9A9F5;">
 
@@ -27,7 +27,7 @@
 
             </style>
      </head>
-<font color="white">
+<FONT  SIZE ='5' COLOR ='black'>
 
 <h1>    Hola, {{=auth.user.first_name}}.</h1>
 <HTML >
@@ -35,20 +35,17 @@
 
 <H4>
 <BR><P>
-<BR><P>
 <b>Desde aquí podrás:</b>
-<BR><P>
+
 <BR><P>
     <OL>
-        <LI type="disc">A Ingresar usuarios al sistema.</LI>
+        <LI type="disc">Ingresar usuarios al sistema y Definir sus roles.</LI>
         <BR><P>
-        <LI type="disc" >Definir sus roles.</LI>
-            <BR><P>
-        <LI type="disc" >Dar de alta a un producto, Empleado y Proveedor.</LI>
+        <LI type="disc" >Dar de alta a un producto, Cliente, Empleado y Proveedor.</LI>
                 <BR><P>
-        <LI type="disc" >Dar de baja a un producto, Empleado y Proveedor.</LI>
+        <LI type="disc" >Dar de baja a un producto, Cliente Empleado y Proveedor.</LI>
                     <BR><P>
-        <LI type="disc" >Modificar datos de producto, Empleado y Proveedor.</LI>
+        <LI type="disc" >Modificar datos de producto, Cliente Empleado y Proveedor.</LI>
 
 
 

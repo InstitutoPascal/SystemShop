@@ -36,9 +36,9 @@ def editar_proveedor():
 
 
 def editar_producto():
-    producto = db(db.productos.id==request.args(0)).select()
+    producto = db(db.producto.id==request.args(0)).select()
     id_producto = producto[0]
-    form = SQLFORM(db.productos, id_producto, deletable=False)
+    form = SQLFORM(db.producto, id_producto, deletable=False)
     if form.accepts(request.vars, session):
         session.flash = " Los datos modificados se guardarán en la Base de Datos"
         redirect(URL(c= 'reportes', f='reportes_productos'))

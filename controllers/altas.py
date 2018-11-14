@@ -11,7 +11,7 @@ def alta_proveedor():
 
 #alta_producto
 def alta_productos():
-    form = SQLFORM(db.productos)
+    form = SQLFORM(db.producto)
     if form.accepts(request.vars, session):
         response.flash = 'Formulario aceptado'
     elif form.errors:

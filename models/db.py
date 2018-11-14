@@ -168,35 +168,7 @@ auth.settings.create_user_groups=False
 # -------------------------------------------------------------------------
 # auth.enable_record_versioning(db)
 
-db.define_table('productos',
-   Field('id_producto', 'string',),
-   Field('codigo_barras', 'string'),
-   Field('cantidad','integer'),
-   Field('nombre','string'),
-   Field('marca','string'),
-   Field('descripcion','string'),
-   Field('categoria','string'),
-   Field('precio','float'),
-   Field('proveedor','string'),
-   Field('codigo_producto','string'),
-   Field('fecha_ingreso','date'),
-   Field('numero_remito','integer'),
-   Field('numero_lote','integer'),
-   Field('alicuota_iva','float'),
-   Field('imagen','upload'),
-   Field('observaciones','text'),
 
-                 )
-db.productos.cantidad.requires=IS_NOT_EMPTY(error_message='Campo obligatorio')
-db.productos.nombre.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(20, error_message='Solo hasta 20 caracteres'),IS_UPPER()
-db.productos.marca.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_UPPER()
-db.productos.categoria.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(16, error_message='Solo hasta 16 caracteres'),IS_UPPER()
-db.productos.precio.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(6, error_message='Solo hasta 6 caracteres')
-#db.productos.proveedor.requires=IS_IN_DB(db,db.proveedor,'%(nombre_empresa)s',) #subconsulta que obtiene datos de la tabla proveedor y campo codigo_proveedor
-#,'%(field)s'  #permite mostrar el valor de un campo para que sea mas facil identificarlo 
-#db.productos.fecha_ingreso.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(10, error_message='Solo hasta 10 caracteres')
-db.productos.numero_lote.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(10, error_message='Solo hasta 10 caracteres')
-db.productos.observaciones.requires=IS_LENGTH(200, error_message='Solo hasta 200 caracteres')
 #############################COMIENZO DE LA TABLA "PROVEEDOR"###################################
 
 db.define_table('proveedor',
@@ -217,9 +189,9 @@ db.define_table('proveedor',
                 )
 db.proveedor.codigo_proveedor.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(4, error_message='Solo hasta 4 caracteres')
 db.proveedor.nombre_empresa.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_UPPER()
-db.proveedor.cuit_proveedor.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(18, error_message='Solo hasta 13 caracteres')
+#db.proveedor.cuit_proveedor.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(18, error_message='Solo hasta 13 caracteres')
 db.proveedor.direccion.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(30, error_message='Solo hasta 15 caracteres')
-db.clientes.codigo_postal.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(8, error_message='Solo hasta 8 caracteres')
+db.proveedor.codigo_postal.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(8, error_message='Solo hasta 8 caracteres')
 db.proveedor.localidad.requires=IS_NOT_EMPTY(error_message='Campo obligatorio')
 db.proveedor.provincia.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(30, error_message='Solo hasta 10 caracteres')
 db.proveedor.pais.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(20, error_message='Solo hasta 20 caracteres')
@@ -254,12 +226,41 @@ db.clientes.nombre.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_U
 db.clientes.apellido.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_UPPER(),IS_LENGTH(30)
 db.clientes.dni.requires=IS_NOT_IN_DB (db,db.clientes.dni),IS_INT_IN_RANGE(2500000,100000000)
 db.clientes.telefono.requires=IS_LENGTH(12, error_message='Solo hasta 12 caracteres')
-#db.clientes.localidad_cliente.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_UPPER(),IS_LENGTH(50),IS_IN_DB(db,'localidad.nombre_localidad','%(nombre_localidad)s')
-#db.clientes.direccion.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_UPPER(),IS_LENGTH(20)
+db.clientes.localidad_cliente.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_UPPER(),IS_LENGTH(50),IS_IN_DB(db,'localidad.nombre_localidad','%(nombre_localidad)s')
+db.clientes.direccion.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_UPPER(),IS_LENGTH(20)
 #db.clientes.numero_calle.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(8, error_message='Solo hasta 8 caracteres')
 db.clientes.provincia.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_UPPER()
 db.clientes.pais.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_UPPER()
 db.clientes.codigo_postal.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(8, error_message='Solo hasta 8 caracteres')
+
+
+db.define_table('producto',
+   Field('id_producto', 'string',),
+   Field('codigo_barras', 'string'),
+   Field('cantidad','integer'),
+   Field('nombre','string'),
+   Field('marca','string'),
+   Field('descripcion','string'),
+   Field('categoria','string'),
+   Field('precio','float'),
+   Field('proveedor','string'),
+   Field('codigo_producto','string'),
+   Field('numero_remito','integer'),
+   Field('numero_lote','integer'),
+   Field('alicuota_iva','float'),
+   Field('imagen','upload'),
+   Field('observaciones','text'),
+
+                 )
+db.producto.cantidad.requires=IS_NOT_EMPTY(error_message='Campo obligatorio')
+db.producto.nombre.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(30, error_message='Solo hasta 20 caracteres'),IS_UPPER()
+db.producto.marca.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_UPPER()
+db.producto.categoria.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(16, error_message='Solo hasta 16 caracteres')
+db.producto.precio.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(6, error_message='Solo hasta 6 caracteres')
+#db.productos.proveedor.requires=IS_IN_DB(db,db.proveedor,'%(nombre_empresa)s',) #subconsulta que obtiene datos de la tabla proveedor y campo codigo_proveedor
+#,'%(field)s'  #permite mostrar el valor de un campo para que sea mas facil identificarlo 
+db.producto.numero_lote.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(10, error_message='Solo hasta 10 caracteres')
+db.producto.observaciones.requires=IS_LENGTH(200, error_message='Solo hasta 200 caracteres')
 
 #############################FIN DE LA TABLA "CLIENTE"###################################################
 ##Categoria##
@@ -305,26 +306,34 @@ db.define_table ('compras',
 db.define_table('empleado',
    Field('id_empleado', 'string',),
    Field('apellido', 'string',),
-   Field('nombres','string',),
+   Field('nombre','string',),
    Field ('dni','integer',label=T ('DNI')),
    Field('fecha_de_nacimiento', 'date',),
+   Field('localidad','string'),
+   Field('codigo_postal','integer'),
+   Field('provincia','string'),
+   Field('pais','string'),
    Field('nacionalidad', 'string',),
    Field('sexo', 'string',),
+   Field('email','string'),
    Field('localidad', 'string',),
+   Field('direccion', 'string'),
+   Field('telefono','string'),
    Field('sector','string'),
+   Field('fecha_ingreso','date'),
    Field('correo_electronico', 'string',label=T('Correo Electrónico',)),
    Field('ocupado','string',)
                )
-db.empleados.id_empleados.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(4, error_message='Solo hasta 4 caracteres'),IS_NOT_IN_DB (db,db.empleados.codigo_empleados)
-db.empleados.dni.requires=IS_NOT_EMPTY(error_message= 'Campo obligatorio') ,IS_INT_IN_RANGE(2500000,100000000, error_message= 'Ingrese un DNI entre 2.500.000 y 100.000.000')
-db.empleados.apellido.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(30, error_message='Solo hasta 30 caracteres'),IS_UPPER()
-db.empleados.nombres.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(30, error_message='Solo hasta 30 caracteres'),IS_UPPER()
-db.empleados.correo_electronico.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(50, error_message='Solo hasta 50 caracteres')
-db.empleados.direccion.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(50, error_message='Solo hasta 50 caracteres'),IS_UPPER()
-db.empleados.localidad.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(50, error_message='Solo hasta 50 caracteres')
-db.empleados.codigo_postal.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(6, error_message='Solo hasta 6 caracteres')
-db.empleados.provincia.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(30,error_message='Solo hasta 30 caracteres')
-db.empleados.pais.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(20, error_message='Solo hasta 20 caracteres')
-db.empleados.telefono.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(20, error_message='Solo hasta 20 caracteres')
-db.empleados.fecha_ingreso.requires=IS_NOT_EMPTY(error_message='Campo obligatorio')
-db.empleados.sector.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(20, error_message='Solo hasta 20 caracteres')
+db.empleado.id_empleado.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(4, error_message='Solo hasta 4 caracteres'),IS_NOT_IN_DB (db,db.empleado.id_empleado)
+db.empleado.dni.requires=IS_NOT_EMPTY(error_message= 'Campo obligatorio') ,IS_INT_IN_RANGE(2500000,100000000, error_message= 'Ingrese un DNI entre 2.500.000 y 100.000.000')
+db.empleado.apellido.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(30, error_message='Solo hasta 30 caracteres'),IS_UPPER()
+db.empleado.nombre.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(30, error_message='Solo hasta 30 caracteres'),IS_UPPER()
+db.empleado.email.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(50, error_message='Solo hasta 50 caracteres')
+db.empleado.direccion.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(50, error_message='Solo hasta 50 caracteres'),IS_UPPER()
+db.empleado.localidad.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(50, error_message='Solo hasta 50 caracteres')
+db.empleado.codigo_postal.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(6, error_message='Solo hasta 6 caracteres')
+db.empleado.provincia.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(30,error_message='Solo hasta 30 caracteres')
+db.empleado.pais.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(20, error_message='Solo hasta 20 caracteres')
+db.empleado.telefono.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(20, error_message='Solo hasta 20 caracteres')
+db.empleado.fecha_ingreso.requires=IS_NOT_EMPTY(error_message='Campo obligatorio')
+db.empleado.sector.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(20, error_message='Solo hasta 20 caracteres')
