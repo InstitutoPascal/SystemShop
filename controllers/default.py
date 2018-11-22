@@ -29,7 +29,16 @@ def index():
         elif nombre_rol=='Clientes':
             redirect (URL('principal_clientes'))
     return dict(message=T('Bienvenido al Sistema!'))
+def index2():
+    """
+    example action using the internationalization operator T and flash
+    rendered by views/default/index.html or views/generic.html
 
+    if you need a simple wiki simply replace the two lines below with:
+    return auth.wiki()
+    """
+    response.flash = T("Gracias por iniciar sesión!")
+    return dict(message=T('Sistema SystemShop'))
 
 def user():
     """

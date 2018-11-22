@@ -24,5 +24,19 @@ def reportes_productos():
 
 def reportes_empleados():
     subtitulo=T('Listado de Empleados')
-    listado =db(db.empleados).select(db.empleados .ALL)
+    listado =db(db.empleado).select(db.empleado.ALL)
     return dict(dc=listado)
+
+
+#------------------------------------------------------------------------------------------------------------------------------------------------------------#Reportes de VentasOnline
+def reportes_venta_online():
+
+    return dict()
+#------------------------------------------------------------------------------------------------------------------------------------------------------------#Reportes de Remitos
+def reportes_remitos():
+
+    return dict()
+#------------------------------------------------------------------------------------------------------------------------------------------------------------#Reportes de Remitos
+def remitos_detalles():
+
+    return dict()

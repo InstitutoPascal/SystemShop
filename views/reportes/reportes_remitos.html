@@ -1,57 +1,58 @@
 <a href="http://127.0.0.1:8000/SystemShop_github/default/index"> <img src="http://127.0.0.1:8000/SystemShop_github/static/images/logo.png" class="img-rounded" alt="Cinque Terre" width="150" height="143" ></a>
 
 <body style="background-color:#A9A9F5;">
-{{extend 'layout_administrador.html'}}
-<div class="container">
+{{extend 'layout_administrador.html'}}<div class="container">
     <div class="row">
         <div class="col-xs-10">
             <div class="panel panel-primary">
                 <!-- Default panel contents -->
                 <div class="panel-heading">
                     <h2 class="panel-title">
-                        Reporte Ventas Online
+                        Reporte Remitos
                     </h2>
                 </div>
                 <div class="panel-body">
                     <h3>
-                        Ventas realizadas de forma Online
+                        Remitos ya ingresados
                     </h3>
                 </div>
                     <ul class="list-group">
                     
                     <li class="list-group-item">
-                    <h4>Total ventas realizadas (Total:: $145,61)</h4>
+                    <h4>Total de remitos ingresados:: (3)</h4>
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>Fecha de Venta</th>
-                                <th>Cliente</th>
-                                <th>Producto</th>
-                                <th>Comprobante Num:</th>
-                                <th>Valor</th>
+                                <th>Remito Fecha</th>
+                                <th>Proveedor</th>
+                                <th>Cantidad total de productos</th>
+                                <th>Remito Numero</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Jueves Nov 12 17:43:13 2018</td>
-                                <td>Juarez Gabriel</td>
-                                <td>Harina</td>
+                                <td>Jueves Nov 12 17:43:13 2017</td>
+                                <td>Coca-ColaSA</td>
+                                <td>200</td>
                                 <td>0001</td>
-                                <td>36.61</td>
+                                <td><a class="btn btn-default" role="button" href="{{=URL(c='reportes',f='remitos_detalles',)}}">Detalles</a></td>
+
                             </tr>
                             <tr>
-                                <td>Viernes Nov 13 12:41:13 2018</td>
-                                <td>Roldan micaela</td>
-                                <td>Coca Cola</td>
+                                <td>Viernes Nov 13 12:41:13 2017</td>
+                                <td>Mayorista Mica</td>
+                                <td>50</td>
                                 <td>0002</td>
-                                <td>80.0</td>
+                                <td><a class="btn btn-default" role="button" href="{{=URL(c='reportes',f='remitos_detalles',)}}">Detalles</a></td>
+
                             </tr>
                             <tr>
-                                <td>Viernes Nov 13 14:43:13 2018</td>
-                                <td>Mendoza Marcelo</td>
-                                <td>Azucar ledesma</td>
+                                <td>Viernes Nov 13 14:43:13 2017</td>
+                                <td>Marolio</td>
+                                <td>150</td>
                                 <td>0003</td>
-                                <td>29.0</td>
+                                <td><a class="btn btn-default" role="button" href="{{=URL(c='reportes',f='demitos_detalles',)}}">Detalles</a></td>
+
                             </tr>
                         </tbody>
                     </table>

@@ -27,7 +27,7 @@ def borrar_proveedor():
     # redirijo al usuario al listado
     redirect(URL(c="reportes", f="reportes_proveedores"))
 
-    
+
 def borrar_empleado():
     # obtengo el primer argumento (ver URL)
     id_empleados = request.args[0]

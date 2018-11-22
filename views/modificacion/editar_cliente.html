@@ -1,13 +1,4 @@
-{{extend 'layout.html'}}
+{{extend 'layout_administrador.html'}}
 
-    <CENTER><B><U>{{=T('Modificación de Datos del CLiente - SystemShop ')}}</U></B></CENTER>
-</H4>
-<center>
-    <TABLE border="3" width="400">
-                    <TR><TH width="200" bgcolor="#cdcdcd"><CENTER><BR>PRODUCTOS<BR></CENTER></TH></TR>
-                {{for x in id_clinte:}}
-                   <TR><TD><BR><CENTER>{{=A(x.clientes,_href=URL(r=request, f='reportes_clientes', args=[x.id]) )}}</CENTER><BR></TD></TR>
-                {{pass}}
-                       </TABLE>
-
-                    </CENTER>
+    <CENTER><B><U>{{=T('Modificación de Datos de Clientes - SystemShop')}}</U></B></CENTER>
+{{=form}}

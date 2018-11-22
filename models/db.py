@@ -226,13 +226,16 @@ db.clientes.nombre.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_U
 db.clientes.apellido.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_UPPER(),IS_LENGTH(30)
 db.clientes.dni.requires=IS_NOT_IN_DB (db,db.clientes.dni),IS_INT_IN_RANGE(2500000,100000000)
 db.clientes.telefono.requires=IS_LENGTH(12, error_message='Solo hasta 12 caracteres')
-db.clientes.localidad_cliente.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_UPPER(),IS_LENGTH(50),IS_IN_DB(db,'localidad.nombre_localidad','%(nombre_localidad)s')
+db.clientes.localidad_cliente.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(50),IS_IN_DB(db,'localidad.nombre_localidad','%(nombre_localidad)s')
 db.clientes.direccion.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_UPPER(),IS_LENGTH(20)
 #db.clientes.numero_calle.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(8, error_message='Solo hasta 8 caracteres')
 db.clientes.provincia.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_UPPER()
 db.clientes.pais.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_UPPER()
 db.clientes.codigo_postal.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(8, error_message='Solo hasta 8 caracteres')
 
+db.define_table('localidad',
+   Field('nombre_localidad','string'),
+   Field('codigo_postal','integer'))
 
 db.define_table('producto',
    Field('id_producto', 'string',),
@@ -299,6 +302,19 @@ db.define_table ('compras',
    Field('remito','string'),
    Field('cantidad','integer')
                 )
+db.compras.codigo_producto.requires=IS_UPPER(),IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(10, error_message='Solo hasta 10 caracteres')
+db.compras.nombre.requires=IS_UPPER(),IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(30, error_message='Solo hasta 30 caracteres')
+db.compras.marca.requires=IS_UPPER(),IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(30, error_message='Solo hasta 30 caracteres')
+db.compras.categoria.requires=IS_UPPER(),IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(4, error_message='Solo hasta 4 caracteres')
+db.compras.precio.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(6, error_message='Solo hasta 6 caracteres')
+db.compras.fecha_ingreso.requires=IS_NOT_EMPTY(error_message='Campo obligatorio')
+#db.compras.fecha_salida.requires=IS_NOT_EMPTY(error_message='Campo obligatorio')
+db.compras.cantidad.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(10, error_message='Solo hasta 10 caracteres')
+db.compras.proveedor.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(130, error_message='Solo hasta 10 caracteres')
+db.compras.remito.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(10, error_message='Solo hasta 10 caracteres')
+#db.compras.factura.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(10, error_message='Solo hasta 10 caracteres')
+#db.compras.orden_compra.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(10, error_message='Solo hasta 10 caracteres')
+
 
 ####################33########FIN TABLA COMPRAS #########################################################
 #############################COMIENZO DE LA TABLA EMPLEADOS#################################
@@ -308,26 +324,24 @@ db.define_table('empleado',
    Field('apellido', 'string',),
    Field('nombre','string',),
    Field ('dni','integer',label=T ('DNI')),
-   Field('fecha_de_nacimiento', 'date',),
    Field('localidad','string'),
    Field('codigo_postal','integer'),
    Field('provincia','string'),
    Field('pais','string'),
    Field('nacionalidad', 'string',),
-   Field('sexo', 'string',),
+   Field('sexo', 'list:string',default='femenino',),
    Field('email','string'),
    Field('localidad', 'string',),
    Field('direccion', 'string'),
    Field('telefono','string'),
    Field('sector','string'),
-   Field('fecha_ingreso','date'),
-   Field('correo_electronico', 'string',label=T('Correo Electrónico',)),
    Field('ocupado','string',)
                )
 db.empleado.id_empleado.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(4, error_message='Solo hasta 4 caracteres'),IS_NOT_IN_DB (db,db.empleado.id_empleado)
 db.empleado.dni.requires=IS_NOT_EMPTY(error_message= 'Campo obligatorio') ,IS_INT_IN_RANGE(2500000,100000000, error_message= 'Ingrese un DNI entre 2.500.000 y 100.000.000')
 db.empleado.apellido.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(30, error_message='Solo hasta 30 caracteres'),IS_UPPER()
-db.empleado.nombre.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(30, error_message='Solo hasta 30 caracteres'),IS_UPPER()
+db.empleado.nombre.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(30, error_message='Solo hasta 30 caracteres')
+db.empleado.sexo.requires=IS_IN_SET (['femenino','masculino'])
 db.empleado.email.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(50, error_message='Solo hasta 50 caracteres')
 db.empleado.direccion.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(50, error_message='Solo hasta 50 caracteres'),IS_UPPER()
 db.empleado.localidad.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(50, error_message='Solo hasta 50 caracteres')
@@ -335,5 +349,5 @@ db.empleado.codigo_postal.requires=IS_NOT_EMPTY(error_message='Campo obligatorio
 db.empleado.provincia.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(30,error_message='Solo hasta 30 caracteres')
 db.empleado.pais.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(20, error_message='Solo hasta 20 caracteres')
 db.empleado.telefono.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(20, error_message='Solo hasta 20 caracteres')
-db.empleado.fecha_ingreso.requires=IS_NOT_EMPTY(error_message='Campo obligatorio')
+#db.empleado.fecha_ingreso.requires=IS_NOT_EMPTY(error_message='Campo obligatorio')
 db.empleado.sector.requires=IS_NOT_EMPTY(error_message='Campo obligatorio'),IS_LENGTH(20, error_message='Solo hasta 20 caracteres')

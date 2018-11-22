@@ -5,9 +5,9 @@
 <TABLE width="100%" border="2" cellspacing="5" cellpadding="5" bgcolor="cdcdcd" font-size: = 11px margin= 0  >  <!-- Tabla  -->
     <TR BGCOLOR="#99f"><TH>CODIGO</TH><TH>DNI</TH><TH>APELLIDO</TH><TH>NOMBRE</TH><TH>OPCIONES</TH></TR>  <!-- Titulo de los campos -->
     {{for x in dc: }}
-    <TR><TD>{{=x.codigo_empleados}}</TD><TD>{{=x.dni}}</TD><TD>{{=x.apellido}}</TD><TD>{{=x.nombre}}</TD><TD> <!-- Campos de la tabla que seran consultados -->
-            <A type="button" class="btn btn-danger btn-xs" href="{{=URL(c='bajas', f='borrar_cliente', args=(x.id, ))}}">BORRAR</A> -  <!-- Permite borrar registros -->
-            <A  type="button" class="btn btn-primary btn-xs" href="{{=URL(c='modificaciones', f='editar_proveedor', args=(x.id, ))}}">EDITAR</A>  <!-- Permite modificar registros -->
+    <TR><TD>{{=x.id_empleado}}</TD><TD>{{=x.dni}}</TD><TD>{{=x.apellido}}</TD><TD>{{=x.nombre}}</TD><TD> <!-- Campos de la tabla que seran consultados -->
+            <A type="button" class="btn btn-danger btn-xs" href="{{=URL(c='bajas', f='borrar_empleado', args=(x.id, ))}}">BORRAR</A> -  <!-- Permite borrar registros -->
+            <A  type="button" class="btn btn-primary btn-xs" href="{{=URL(c='modificacion', f='editar_empleado', args=(x.id, ))}}">EDITAR</A>  <!-- Permite modificar registros -->
         </TD></TD></TR>
     {{pass}}
 

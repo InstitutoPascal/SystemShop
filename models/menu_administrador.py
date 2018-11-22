@@ -29,15 +29,6 @@ response.menu_administrador = [
 
 
 
-response.menu_administrador += [
-            (T('Reportes'), False, '#', [
-                (T('Productos'), False, URL('reportes','reportes_productos' ),[]),
-                (T('Empleados'), False, URL('reportes','reportes_empleados' ),[]),
-                (T('Proveedores'), False, URL('reportes','reportes_proveedores' ),[]),
-                (T('Clientes'), False, URL('reportes','reportes_clientes' ),[])
-
-
-                ])]
 
 response.menu_administrador += [
             (T('Altas'), False, '#', [
@@ -49,6 +40,22 @@ response.menu_administrador += [
 
 
                 ])]
+response.menu_administrador += [
+            (T('Reportes'), False, '#', [
+                (T('Productos'), False, URL('reportes','reportes_productos' ),[]),
+                (T('Empleados'), False, URL('reportes','reportes_empleados' ),[]),
+                (T('Proveedores'), False, URL('reportes','reportes_proveedores' ),[]),
+                (T('Ventas Online'), False, URL('reportes', 'reportes_venta_online'),[]),
+                (T('Remitos'), False, URL('reportes', 'reportes_remitos'),[]),
+                (T('Clientes'), False, URL('reportes','reportes_clientes' ),[])
+
+
+                ])]
+
+response.menu_administrador += [
+            (T('Compras'), False, URL('default','index'), [
+                (T('Proveedores'), False, URL('compras', 'compras_proveedores'),[])])]
+
 
 response.menu_administrador += [
             (T('Categorias'), False, URL('productos','index'), [
@@ -58,6 +65,8 @@ response.menu_administrador += [
 
 
         ])]
+
+
 
 DEVELOPMENT_MENU = True
 

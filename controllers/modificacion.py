@@ -13,7 +13,7 @@ def editar_cliente():
 		response.flash = 'Su formulario contiene errores, porfavor modifiquelo'
     else:
 		response.flash = 'Por favor rellene el formulario'
-    return dict(f=form)
+    return dict(form=form)
 
 
 # Editar Cliente --------------------------------------------------------------------------------------------
@@ -27,12 +27,12 @@ def editar_proveedor():
     if form.accepts(request.vars, session):
         session.flash = 'Formulario correctamente cargado'
         # redirijo al usuario al listado
-        redirect(URL(c="reportes", f="reportes_clientes"))
+        redirect(URL(c="reportes", f="reportes_proveedores"))
     elif form.errors:
 		response.flash = 'Su formulario contiene errores, porfavor modifiquelo'
     else:
 		response.flash = 'Por favor rellene el formulario'
-    return dict(f=form)
+    return dict(form=form)
 
 
 def editar_producto():
@@ -42,5 +42,15 @@ def editar_producto():
     if form.accepts(request.vars, session):
         session.flash = " Los datos modificados se guardarán en la Base de Datos"
         redirect(URL(c= 'reportes', f='reportes_productos'))
+
+    return dict( form=form)
+
+def editar_empleado():
+    empleados = db(db.empleado.id==request.args(0)).select()
+    id_empleado = empleados[0]
+    form = SQLFORM(db.empleado, id_empleado, deletable=False)
+    if form.accepts(request.vars, session):
+        session.flash = " Los datos modificados se guardarán en la Base de Datos"
+        redirect(URL(c= 'reportes', f='reportes_empleados'))
 
     return dict( form=form)

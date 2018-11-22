@@ -10,7 +10,7 @@
     {{for x in dc: }}
     <TR><TD>{{=x.dni}}</TD><TD>{{=x.apellido}}</TD><TD>{{=x.nombre}}</TD><TD>{{=x.telefono}}</TD><TD>{{=x.localidad_cliente}}</TD><TD> <!-- Campos de la tabla que seran consultados -->
             <A type="button" class="btn btn-danger btn-xs" href="{{=URL(c='bajas', f='borrar_cliente', args=(x.id, ))}}">BORRAR</A> -  <!-- Permite borrar registros -->
-            <A type="button" class="btn btn-primary btn-xs" href="{{=URL(c='modificaciones', f='editar_cliente', args=(x.id, ))}}">EDITAR</A> <!-- Permite modificar registros -->
+            <A type="button" class="btn btn-primary btn-xs" href="{{=URL(c='modificacion', f='editar_cliente', args=(x.id, ))}}">EDITAR</A> <!-- Permite modificar registros -->
         </TD></TD></TR>
     {{pass}}
 <TH> <center BGCOLOR="#99f"> <input type="button" class="btn btn-success btn-xs" type="button" name="Imprimir Reporte" value="Imprimir Reporte" onclick="window.print();">  </center> </TH> <!-- Boton Imprimir  -->

@@ -20,7 +20,7 @@ def index():
     # llamamos a MP para que cree un link...
     preferenceResult = mp.create_preference(preference)
     try:
-        url = preferenceResult["response"]["sandbox_init_point"]
+        url = preferenceResult["response"]["init_point"]
         redirect(url)
     except:
         raise
